@@ -12,6 +12,7 @@ internal class MazeControllerPatches
     [HarmonyPrefix]
     private static void Activate(MazeController __instance)
     {
+        if (__instance.isActive().V) return;
         var controller = AlwaysMistController.Instance;
         if (!controller) return;
         // ReSharper disable once InvertIf
@@ -24,11 +25,19 @@ internal class MazeControllerPatches
             __instance.restScenePoint().V = (int)Math.Round(controller.LastRandomValue / 2f);
         }
 
-        // if (!controller.IsEnteredMaze) return;
-        // if (controller.CurrentSceneName != AlwaysMistController.MazeExitSceneName) return;
-        // if (Main.TrueAlwaysMist is not { Value: true }) return;
-        // if (string.IsNullOrEmpty(controller.TargetSceneName)) return;
-        // __instance.exitSceneName().V = controller.TargetSceneName;
+        if (controller.CurrentSceneName != AlwaysMistController.MazeEntranceSceneName) return;
+        if (Main.TrueAlwaysMist is not { Value: true }) return;
+        if (string.IsNullOrEmpty(controller.TargetEntryDoorDir) || controller.TargetEntryDoorDir == "left") return;
+        var newDoors = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
+            door.gameObject.scene == __instance.gameObject.scene &&
+            door.gameObject.name == AlwaysMistController.RightTransitionPoint);
+        if (!newDoors) return;
+        
+        var playerData = PlayerData.instance;
+        Utils.Logger.Debug($"playerData.PreviousMazeTargetDoor: {playerData.PreviousMazeTargetDoor}");
+
+        __instance.entryDoors().V.Clear();
+        __instance.entryDoors().V.Add(newDoors);
     }
 
     [HarmonyPatch(nameof(GetExitMatch))]
@@ -79,4 +88,59 @@ internal class MazeControllerPatches
     //     __result = ret;
     //     return false;
     // }
+
+    [HarmonyPatch(nameof(SubscribeDoorEntered))]
+    [HarmonyPrefix]
+    private static bool SubscribeDoorEntered(MazeController __instance, TransitionPoint door)
+    {
+        var controller = AlwaysMistController.Instance;
+        if (!controller) return true;
+        if (Main.TrueAlwaysMist is not { Value: true }) return true;
+
+        door.OnBeforeTransition += () =>
+        {
+            var instance = PlayerData.instance;
+            var name = door.name;
+            if (!__instance.isCapScene().V)
+            {
+                if (door.targetScene == __instance.restSceneName())
+                {
+                    instance.EnteredMazeRestScene = true;
+                    instance.CorrectMazeDoorsEntered = __instance.neededCorrectDoors() - __instance.restScenePoint();
+                    instance.IncorrectMazeDoorsEntered = 0;
+                }
+                else if (instance.PreviousMazeTargetDoor != name)
+                {
+                    if (__instance.correctDoors().V.Contains(door))
+                    {
+                        ++instance.CorrectMazeDoorsEntered;
+                        instance.IncorrectMazeDoorsEntered = 0;
+                    }
+                    else
+                    {
+                        instance.CorrectMazeDoorsEntered = 0;
+                        ++instance.IncorrectMazeDoorsEntered;
+                        instance.EnteredMazeRestScene = false;
+
+                        var isLeft = string.IsNullOrEmpty(controller.TargetEntryDoorDir) ||
+                                     controller.TargetEntryDoorDir == "left";
+
+                        if (instance.IncorrectMazeDoorsEntered >= __instance.allowedIncorrectDoors() &&
+                            name.StartsWith(isLeft ? "right" : "left"))
+                        {
+                            door.SetTargetScene("Dust_Maze_09_entrance");
+                            door.entryPoint = isLeft
+                                ? AlwaysMistController.LeftTransitionPoint
+                                : AlwaysMistController.RightTransitionPoint;
+                        }
+                    }
+                }
+            }
+
+            instance.PreviousMazeTargetDoor = door.entryPoint;
+            instance.PreviousMazeScene = door.gameObject.scene.name;
+            instance.PreviousMazeDoor = name;
+        };
+        return false;
+    }
 }

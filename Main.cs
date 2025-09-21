@@ -28,7 +28,7 @@ public class Main : BaseUnityPlugin
             "Always reset maze save data when enter even you're not death.");
         RandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(RandomNeededCorrectDoors), false,
             "Random the correct doors needed when enter every single times.");
-        MaxRandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(MaxRandomNeededCorrectDoors), 20,
+        MaxRandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(MaxRandomNeededCorrectDoors), 10,
             new ConfigDescription("The max value of random the correct doors needed",
                 new AcceptableValueRange<int>(2, 100)));
         MinRandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(MinRandomNeededCorrectDoors), 2,

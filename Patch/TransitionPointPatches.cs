@@ -23,6 +23,11 @@ internal static class TransitionPointPatches
         Utils.Logger.Debug($"controller.TargetEntryDoorDir: {controller.TargetEntryDoorDir}");
         Utils.Logger.Debug($"controller.TargetExitDoorDir: {controller.TargetExitDoorDir}");
         Utils.Logger.Debug($"controller.EnterDoorName: {controller.EnterDoorName}");
-        __instance.entryPoint = "right1";
+        __instance.SetTargetDoor(controller.TargetEntryDoorDir switch
+        {
+            "left" => "right1",
+            "right" => "left1",
+            _ => "right1"
+        });
     }
 }

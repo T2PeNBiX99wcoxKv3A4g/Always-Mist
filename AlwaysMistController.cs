@@ -8,8 +8,8 @@ public class AlwaysMistController : MonoBehaviour
 {
     private const string ChangeScene = "Shadow_04";
     private const string ChangeScene2 = "Dust_05";
-    private const string LeftTransitionPoint = "left1";
-    private const string RightTransitionPoint = "right1";
+    public const string LeftTransitionPoint = "left1";
+    public const string RightTransitionPoint = "right1";
 
     // ReSharper disable MemberCanBePrivate.Global
     public const string MazeEntranceSceneName = "Dust_Maze_09_entrance";
@@ -67,7 +67,7 @@ public class AlwaysMistController : MonoBehaviour
 
     private IEnumerator OnSceneLoadedDelay()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 
         EnterMazeHandle();
 
@@ -84,7 +84,16 @@ public class AlwaysMistController : MonoBehaviour
                     case MazeEntranceSceneName:
                         Utils.Logger.Debug($"EnterSceneName: {EnterSceneName}");
                         Utils.Logger.Debug($"EnterDoorName: {EnterDoorName}");
-                        ChangeTransitionScene(RightTransitionPoint, EnterSceneName, EnterDoorName);
+                        switch (TargetEntryDoorDir)
+                        {
+                            case "left":
+                                ChangeTransitionScene(RightTransitionPoint, EnterSceneName, EnterDoorName);
+                                break;
+                            case "right":
+                                ChangeTransitionScene(LeftTransitionPoint, EnterSceneName, EnterDoorName);
+                                break;
+                        }
+
                         break;
                     case MazeExitSceneName:
                         Utils.Logger.Debug($"TargetSceneName: {TargetSceneName}");
@@ -121,11 +130,10 @@ public class AlwaysMistController : MonoBehaviour
     private void ChangeTransitionScene(string doorName, string changeScene = MazeEntranceSceneName,
         string? exitDoorName = null)
     {
-        var points = TransitionPoint.TransitionPoints.Where(door =>
-            door.gameObject.scene == _currentScene && door.gameObject.name == doorName).ToList();
-        if (points.Count < 1) return;
+        var point = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
+            door.gameObject.scene == _currentScene && door.gameObject.name == doorName);
+        if (!point) return;
 
-        var point = points[0];
         var targetScene = point.targetScene;
 
         Utils.Logger.Info($"Target Scene: {targetScene}");
@@ -137,19 +145,29 @@ public class AlwaysMistController : MonoBehaviour
         }
 
         if (!string.IsNullOrEmpty(exitDoorName) && point.entryPoint != exitDoorName)
-            point.entryPoint = exitDoorName;
+            point.SetTargetDoor(exitDoorName);
 
         if (Main.ResetMazeSaveData is { Value: true } || Main.TrueAlwaysMist is { Value: true })
             MazeController.ResetSaveData();
     }
 
+    private void CopyTransitionTo(string from, string to)
+    {
+        var fromPoint = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
+            door.gameObject.scene == _currentScene && door.gameObject.name == from);
+        if (!fromPoint) return;
+        var toPoint = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
+            door.gameObject.scene == _currentScene && door.gameObject.name == to);
+        if (!toPoint) return;
+        toPoint.SetTargetDoor(fromPoint.entryPoint);
+        toPoint.SetTargetScene(fromPoint.targetScene);
+    }
+
     private void ChangeExitTransitionScene(string changeScene, string exitDoorName)
     {
-        var points = TransitionPoint.TransitionPoints.Where(door =>
-            door.gameObject.scene == _currentScene && door.targetScene == MazeOldTargetSceneName).ToList();
-        if (points.Count < 1) return;
-
-        var point = points[0];
+        var point = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
+            door.gameObject.scene == _currentScene && door.targetScene == MazeOldTargetSceneName);
+        if (!point) return;
         var targetScene = point.targetScene;
 
         Utils.Logger.Info($"Target Scene: {targetScene}");
@@ -161,7 +179,7 @@ public class AlwaysMistController : MonoBehaviour
         }
 
         if (!string.IsNullOrEmpty(exitDoorName) && point.entryPoint != exitDoorName)
-            point.entryPoint = exitDoorName;
+            point.SetTargetDoor(exitDoorName);
 
         if (Main.ResetMazeSaveData is { Value: true } || Main.TrueAlwaysMist is { Value: true })
             MazeController.ResetSaveData();
