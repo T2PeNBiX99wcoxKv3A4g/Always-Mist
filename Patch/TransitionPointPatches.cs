@@ -16,7 +16,7 @@ internal static class TransitionPointPatches
         if (!controller || !controller.IsOutsideMaze ||
             !controller.ChangedTransitionPoint.TryGetValue(__instance, out var oldTargetScene)) return;
         controller.TargetSceneName = oldTargetScene;
-        controller.TargetEntryDoorDir = Utils.GetEntryDoorDir(__instance.name) ?? "left";
+        controller.TargetEntryDoorDir = Utils.GetEntryDoorDir(__instance.name) ?? Utils.GetDoorDirMatch(__instance.entryPoint) ?? "left";
         controller.TargetExitDoorDir = __instance.entryPoint;
         controller.EnterDoorName = __instance.name;
         Utils.Logger.Debug($"controller.TargetSceneName: {controller.TargetSceneName}");
