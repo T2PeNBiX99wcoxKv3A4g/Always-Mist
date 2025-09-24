@@ -44,7 +44,7 @@ jobs:
         run: pip install -r .scripts/requirements.txt
 
       - name: Change version in `Utils.cs`
-        run: python .scripts/change_version.py ../Utils.cs Version ${{ steps.tag_version.outputs.new_tag }}
+        run: python .scripts/change_version.py ./Utils.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Remove `.scripts`
         run: rm -rf .scripts
