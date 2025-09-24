@@ -47,7 +47,7 @@ jobs:
         run: python .scripts/change_version.py ./Utils.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Remove `.scripts`
-        run: rm -rf .scripts
+        run: Remove-Item -Force -Recurse .scripts
 
       - name: Set git user
         uses: fregante/setup-git-user@v2
