@@ -31,6 +31,13 @@ jobs:
           pre_release_branches: "fast"
           custom_release_rules: "fix:prerelease,feat:prerelease"
 
+      - name: Create `CHANGELOG.md` file
+        run: |
+          $changeLog = @"
+          ${{ steps.tag_version.outputs.changelog }}
+          "@
+          echo $changeLog > ./CHANGELOG.md
+
       - name: Clone Python script
         run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
 
@@ -60,7 +67,7 @@ jobs:
         run: git add .
 
       - name: Commit changed files
-        run: "git commit -m 'Action: Update version in `Utils.cs`'"
+        run: "git commit -m 'Action: Update version in `Utils.cs` and update `CHANGELOG.md`'"
 
       - name: Fetch from fast
         run: git fetch origin fast
