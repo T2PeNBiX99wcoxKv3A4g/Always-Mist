@@ -14,5 +14,8 @@ A mod for the `Hollow Knight: Silksong`
 
 ## Configuration
 The mod configuration file name is `io.github.ykysnk.AlwaysMist.cfg` inside `game folder/BepInEx/config`,
-If you are not using any mod manager, you can manually change the value, also if you installed [BepinEx Configuration Manager](github.com/BepInEx/BepInEx.ConfigurationManager)
-You can change any values in game instead.
+If you are not using any mod manager, you can manually change the value, also if you installed [BepinEx Configuration Manager](https://github.com/BepInEx/BepInEx.ConfigurationManager)
+you can change any values in game instead.
+
+**The `TrueAlwaysMist` config will ignore `ResetMazeSaveData`, `RandomNeededCorrectDoors`, `RestBenchInMist` config values.
+Also turn on the config, enter any doors or any room will enter the mist area first!**
