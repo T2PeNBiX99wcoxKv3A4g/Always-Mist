@@ -24,15 +24,15 @@ jobs:
           dotnet-version: '9.0'
 
       - name: Bump version and push tag
-          id: tag_version
-          uses: mathieudutour/github-tag-action@v6.2
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            pre_release_branches: "fast"
-            custom_release_rules: "fix:prerelease,feat:prerelease"
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pre_release_branches: "fast"
+          custom_release_rules: "fix:prerelease,feat:prerelease"
 
       - name: Clone Python script
-          run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
+        run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
 
       - name: Setup Python
         uses: actions/setup-python@v5
