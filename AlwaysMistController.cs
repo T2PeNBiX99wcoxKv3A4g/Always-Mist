@@ -1,6 +1,8 @@
 using System.Collections;
+using HarmonyLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 namespace AlwaysMist;
 
@@ -15,25 +17,129 @@ public class AlwaysMistController : MonoBehaviour
     public const string MazeEntranceSceneName = "Dust_Maze_09_entrance";
     public const string MazeExitSceneName = "Dust_Maze_Last_Hall";
     public const string MazeRestSceneName = "Dust_Maze_crossing";
-    public const string MazeOldTargetSceneName = "Dust_09";
     // ReSharper restore MemberCanBePrivate.Global
 
     // ReSharper disable MemberCanBePrivate.Global
     public string CurrentSceneName { get; private set; } = "";
-    public string TargetSceneName { get; set; } = "";
-    public string TargetEntryDoorDir { get; set; } = "";
-    public string TargetExitDoorDir { get; set; } = "";
-    public string EnterSceneName { get; private set; } = "";
-    public string EnterDoorName { get; set; } = "";
-    public bool IsEnteredMaze { get; private set; }
+
+    public string TargetSceneName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetSceneName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetSceneName = value;
+        }
+    }
+
+    public string TargetEntryDoorDir
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetEntryDoorDir;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetEntryDoorDir = value;
+        }
+    }
+
+    public string TargetExitDoorDir
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetExitDoorDir;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetExitDoorDir = value;
+        }
+    }
+
+    public string TargetExitDoorName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetExitDoorName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetExitDoorName = value;
+        }
+    }
+
+    public string EnterSceneName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.EnterSceneName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.EnterSceneName = value;
+        }
+    }
+
+    public string EnterDoorName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.EnterDoorName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.EnterDoorName = value;
+        }
+    }
+
+    public bool IsEnteredMaze
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.IsEnteredMaze;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.IsEnteredMaze = value;
+        }
+    }
 
     public bool IsOutsideMaze => !IsEnteredMaze && CurrentSceneName != MazeExitSceneName &&
                                  CurrentSceneName != MazeRestSceneName &&
                                  !SceneNames.Contains(CurrentSceneName);
 
-    public int LastRandomValue { get; set; } = -1;
+    public int LastRandomValue
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.LastRandomValue;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.LastRandomValue = value;
+        }
+    }
 
     public readonly Dictionary<TransitionPoint, string> ChangedTransitionPoint = new();
+    public readonly Dictionary<int, AlwaysMistData> SaveDatas = new();
     // ReSharper restore MemberCanBePrivate.Global
 
     private Scene _currentScene;
@@ -43,6 +149,20 @@ public class AlwaysMistController : MonoBehaviour
         "Dust_Maze_01", "Dust_Maze_02", "Dust_Maze_03", "Dust_Maze_04", "Dust_Maze_05", "Dust_Maze_06", "Dust_Maze_07",
         "Dust_Maze_08"
     ];
+
+    public void GetSaveData(out AlwaysMistData data)
+    {
+        var gameManager = GameManager.instance;
+        if (!gameManager)
+        {
+            data = new AlwaysMistData();
+            return;
+        }
+
+        if (!SaveDatas.ContainsKey(gameManager.profileID))
+            SaveDatas.Add(gameManager.profileID, new AlwaysMistData());
+        data = SaveDatas[gameManager.profileID];
+    }
 
     private void Awake()
     {
@@ -62,12 +182,14 @@ public class AlwaysMistController : MonoBehaviour
         Utils.Logger.Debug($"OnSceneLoaded: {scene.name}");
         CurrentSceneName = scene.name;
         _currentScene = scene;
+
+        TurnOnRestBench();
         StartCoroutine(OnSceneLoadedDelay());
     }
 
     private IEnumerator OnSceneLoadedDelay()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
 
         EnterMazeHandle();
 
@@ -99,7 +221,7 @@ public class AlwaysMistController : MonoBehaviour
                         Utils.Logger.Debug($"TargetSceneName: {TargetSceneName}");
                         Utils.Logger.Debug($"TargetExitDoorDir: {TargetExitDoorDir}");
                         if (string.IsNullOrEmpty(TargetSceneName)) break;
-                        ChangeExitTransitionScene(TargetSceneName, TargetExitDoorDir);
+                        FixExitTransition(); // Still need to fix entryPoint
                         break;
                 }
         }
@@ -107,6 +229,26 @@ public class AlwaysMistController : MonoBehaviour
         {
             EnterSceneName = CurrentSceneName;
             ChangeTransitionScene(LeftTransitionPoint);
+        }
+    }
+
+    private void TurnOnRestBench()
+    {
+        if (CurrentSceneName != MazeEntranceSceneName || (Main.RestBenchInMist is not { Value: true } && Main.TrueAlwaysMist is not { Value: true })) return;
+        var restBenches = FindObjectsByType<RestBench>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        
+        Utils.Logger.Debug($"Find RestBenchs: {restBenches}");
+
+        foreach (var restBench in restBenches)
+        {
+            var obj = restBench.gameObject;
+            
+            if (obj.tag != "RespawnPoint") continue;
+            
+            Utils.Logger.Debug($"Got RestBench: {obj}");
+            
+            if (obj && !obj.activeSelf)
+                obj.SetActive(true);
         }
     }
 
@@ -151,38 +293,12 @@ public class AlwaysMistController : MonoBehaviour
             MazeController.ResetSaveData();
     }
 
-    private void CopyTransitionTo(string from, string to)
-    {
-        var fromPoint = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
-            door.gameObject.scene == _currentScene && door.gameObject.name == from);
-        if (!fromPoint) return;
-        var toPoint = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
-            door.gameObject.scene == _currentScene && door.gameObject.name == to);
-        if (!toPoint) return;
-        toPoint.SetTargetDoor(fromPoint.entryPoint);
-        toPoint.SetTargetScene(fromPoint.targetScene);
-    }
-
-    private void ChangeExitTransitionScene(string changeScene, string exitDoorName)
+    private void FixExitTransition()
     {
         var point = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
-            door.gameObject.scene == _currentScene && door.targetScene == MazeOldTargetSceneName);
+            door.gameObject.scene == _currentScene && door.targetScene == TargetSceneName);
         if (!point) return;
-        var targetScene = point.targetScene;
-
-        Utils.Logger.Info($"Target Scene: {targetScene}");
-
-        if (targetScene != changeScene)
-        {
-            Utils.Logger.Info($"Change target scene to: {changeScene}");
-            point.SetTargetScene(changeScene);
-        }
-
-        if (!string.IsNullOrEmpty(exitDoorName) && point.entryPoint != exitDoorName)
-            point.SetTargetDoor(exitDoorName);
-
-        if (Main.ResetMazeSaveData is { Value: true } || Main.TrueAlwaysMist is { Value: true })
-            MazeController.ResetSaveData();
+        point.SetTargetDoor(TargetExitDoorName);
     }
 
     private void ChangeAllTransitionScene()

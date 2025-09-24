@@ -1,4 +1,6 @@
+using AlwaysMist.Proxy;
 using HarmonyLib;
+using TeamCherry.SharedUtils;
 using Random = UnityEngine.Random;
 
 // ReSharper disable InconsistentNaming
@@ -25,6 +27,10 @@ internal class MazeControllerPatches
             __instance.restScenePoint().V = (int)Math.Round(controller.LastRandomValue / 2f);
         }
 
+        if (controller.CurrentSceneName == AlwaysMistController.MazeExitSceneName &&
+            !string.IsNullOrEmpty(controller.TargetSceneName))
+            __instance.exitSceneName().V = controller.TargetSceneName;
+
         if (controller.CurrentSceneName != AlwaysMistController.MazeEntranceSceneName) return;
         if (Main.TrueAlwaysMist is not { Value: true }) return;
         if (string.IsNullOrEmpty(controller.TargetEntryDoorDir) || controller.TargetEntryDoorDir == "left") return;
@@ -32,7 +38,7 @@ internal class MazeControllerPatches
             door.gameObject.scene == __instance.gameObject.scene &&
             door.gameObject.name == AlwaysMistController.RightTransitionPoint);
         if (!newDoors) return;
-        
+
         var playerData = PlayerData.instance;
         Utils.Logger.Debug($"playerData.PreviousMazeTargetDoor: {playerData.PreviousMazeTargetDoor}");
 
@@ -42,52 +48,35 @@ internal class MazeControllerPatches
 
     [HarmonyPatch(nameof(GetExitMatch))]
     [HarmonyPrefix]
-    private static void GetExitMatch(MazeController __instance)
+    private static bool GetExitMatch(MazeController __instance, ref object __result)
     {
         var controller = AlwaysMistController.Instance;
-        if (!controller) return;
-        if (Main.TrueAlwaysMist is not { Value: true }) return;
-        if (string.IsNullOrEmpty(controller.TargetSceneName)) return;
-        if (!controller.IsEnteredMaze) return;
-        var playerData = PlayerData.instance;
-        playerData.MazeEntranceScene = controller.TargetEntryDoorDir switch
-        {
-            "left" => "Shadow_04",
-            "right" => "Dust_05",
-            _ => AlwaysMistController.MazeOldTargetSceneName
-        };
-        playerData.MazeEntranceDoor = "left";
-    }
+        if (!controller) return true;
+        if (Main.TrueAlwaysMist is not { Value: true }) return true;
+        if (string.IsNullOrEmpty(controller.TargetSceneName)) return true;
+        if (!controller.IsEnteredMaze) return true;
 
-    // [HarmonyPatch(nameof(GetExitMatch))]
-    // [HarmonyPrefix]
-    // private static bool GetExitMatch(MazeController __instance, ref object __result)
-    // {
-    //     var controller = AlwaysMistController.Instance;
-    //     if (!controller) return true;
-    //     if (Main.TrueAlwaysMist is not { Value: true }) return true;
-    //     if (string.IsNullOrEmpty(controller.TargetSceneName)) return true;
-    //     if (controller.CurrentSceneName != AlwaysMistController.MazeExitSceneName) return true;
-    //
-    //     Utils.Logger.Debug("Create Entry Match");
-    //
-    //     var exitMatch = new MazeControllerEntryMatchProxy();
-    //     exitMatch.EntryScene().V = controller.TargetSceneName;
-    //     exitMatch.EntryDoorDir().V = controller.TargetEntryDoorDir;
-    //     exitMatch.ExitDoorDir().V = controller.TargetExitDoorDir;
-    //     exitMatch.FogRotationRange().V = controller.TargetEntryDoorDir switch
-    //     {
-    //         "left" => new MinMaxFloat(0, 0),
-    //         "right" => new MinMaxFloat(0, 3.1416f),
-    //         _ => new MinMaxFloat(0, 0)
-    //     };
-    //
-    //     var ret = exitMatch.GetObject();
-    //     Utils.Logger.Debug($"Create Entry Match is {ret}");
-    //     if (ret == null) return true;
-    //     __result = ret;
-    //     return false;
-    // }
+        Utils.Logger.Debug("Create Entry Match");
+
+        var exitMatch = new MazeControllerEntryMatchProxy();
+        exitMatch.EntryScene().V = controller.EnterSceneName;
+        exitMatch.EntryDoorDir().V = controller.TargetEntryDoorDir;
+        exitMatch.ExitDoorDir().V = controller.CurrentSceneName == AlwaysMistController.MazeExitSceneName
+            ? controller.TargetExitDoorName
+            : controller.TargetExitDoorDir;
+        exitMatch.FogRotationRange().V = controller.TargetEntryDoorDir switch
+        {
+            "left" => new MinMaxFloat(0, 0),
+            "right" => new MinMaxFloat(0, 3.1416f),
+            _ => new MinMaxFloat(0, 0)
+        };
+
+        var ret = exitMatch.GetObject();
+        Utils.Logger.Debug($"Create Entry Match is {ret}");
+        if (ret == null) return true;
+        __result = ret;
+        return false;
+    }
 
     [HarmonyPatch(nameof(SubscribeDoorEntered))]
     [HarmonyPrefix]

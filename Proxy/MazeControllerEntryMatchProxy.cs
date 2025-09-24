@@ -6,11 +6,11 @@ namespace AlwaysMist.Proxy;
 
 public class MazeControllerEntryMatchProxy : ClassProxy
 {
-    public MazeControllerEntryMatchProxy() : base("MazeControllerEntryMatchProxy")
+    public MazeControllerEntryMatchProxy() : base("MazeController+EntryMatch")
     {
     }
 
-    public MazeControllerEntryMatchProxy(object obj) : base(obj, "MazeControllerEntryMatchProxy")
+    public MazeControllerEntryMatchProxy(object obj) : base(obj, "MazeController+EntryMatch")
     {
     }
 

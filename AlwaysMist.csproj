@@ -32,6 +32,18 @@
     <Reference Include="MonoMod.Utils">
       <HintPath>\Lib\MonoMod.Utils.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.UnityConverters">
+      <HintPath>Lib\Newtonsoft.Json.UnityConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.UnityConverters.Addressables">
+      <HintPath>Lib\Newtonsoft.Json.UnityConverters.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.UnityConverters.Mathematics">
+      <HintPath>Lib\Newtonsoft.Json.UnityConverters.Mathematics.dll</HintPath>
+    </Reference>
     <Reference Include="TeamCherry.SharedUtils">
       <HintPath>Lib\TeamCherry.SharedUtils.dll</HintPath>
     </Reference>

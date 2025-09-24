@@ -16,6 +16,7 @@ public class Main : BaseUnityPlugin
     internal static ConfigEntry<int>? MaxRandomNeededCorrectDoors;
     internal static ConfigEntry<int>? MinRandomNeededCorrectDoors;
     internal static ConfigEntry<bool>? TrueAlwaysMist;
+    internal static ConfigEntry<bool>? RestBenchInMist;
 
     private const string SectionOptions = "Options";
 
@@ -35,6 +36,8 @@ public class Main : BaseUnityPlugin
             new ConfigDescription("The min value of random the correct doors needed",
                 new AcceptableValueRange<int>(2, 100)));
         TrueAlwaysMist = Config.Bind(SectionOptions, nameof(TrueAlwaysMist), false, "Always enter mist maze");
+        RestBenchInMist =
+            Config.Bind(SectionOptions, nameof(RestBenchInMist), false, "Turn on rest bench in mist maze");
 
         var obj = new GameObject(nameof(AlwaysMistController));
         obj.AddComponent<AlwaysMistController>();
