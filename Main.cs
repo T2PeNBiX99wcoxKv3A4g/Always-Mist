@@ -35,7 +35,7 @@ public class Main : BaseUnityPlugin
         MinRandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(MinRandomNeededCorrectDoors), 2,
             new ConfigDescription("The min value of random the correct doors needed",
                 new AcceptableValueRange<int>(2, 100)));
-        TrueAlwaysMist = Config.Bind(SectionOptions, nameof(TrueAlwaysMist), false, "Always enter mist maze");
+        TrueAlwaysMist = Config.Bind(SectionOptions, nameof(TrueAlwaysMist), false, "Always enter mist maze first");
         RestBenchInMist =
             Config.Bind(SectionOptions, nameof(RestBenchInMist), false, "Turn on rest bench in mist maze");
 
