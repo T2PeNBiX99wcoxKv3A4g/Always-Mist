@@ -1,6 +1,6 @@
 # Always Mist
 
-A mod for the `Hollow Knight: Silksong`
+A mod let you enter [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) again
 
 ## What does this mod do?
 * The mod will reopen [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) even you finish the area.
