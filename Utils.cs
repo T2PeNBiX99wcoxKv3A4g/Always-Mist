@@ -9,7 +9,7 @@ public static class Utils
     internal const string Guid = "io.github.ykysnk.AlwaysMist";
     internal const string Name = "Always Mist";
     internal const string FolderName = "AlwaysMist";
-    internal const string Version = "0.0.1";
+    internal const string Version = "0.0.7";
 
     private static Logger? _logger;
     public static Logger Logger => _logger ??= new Logger(Name);
