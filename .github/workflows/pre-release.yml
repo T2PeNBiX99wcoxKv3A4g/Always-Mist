@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - fast
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - 'LICENSE'
 
 jobs:
   windows-release-build:
