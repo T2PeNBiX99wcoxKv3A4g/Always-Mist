@@ -45,9 +45,6 @@ jobs:
         with:
           python-version: '>=3.13.7'
           cache: 'pip'
-          cache-dependency-path: |
-            "**/.change-log-generator/requirements*.txt"
-            "**/.scripts/requirements*.txt"
 
       - name: Install Dependencies
         run: |
