@@ -1,5 +1,11 @@
 # Changelog
 
+### [0.0.12](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.11...v0.0.12) (2025-09-26)
+
+### Bug Fixes
+
+* Upgrade .dll ([cc6f92e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/cc6f92e086bc0a557af2361ce4dad7110ab25b0c))
+
 ### [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.10...v0.0.11) (2025-09-25)
 
 ### Bug Fixes
