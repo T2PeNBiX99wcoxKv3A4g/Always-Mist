@@ -3,28 +3,72 @@
 A mod let you enter [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) again
 
 ## What does this mod do?
-* The mod will reopen [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) even you finish the area.
+
+* The mod will reopen [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) even you finish the
+  area.
 * Random the maze value make the mist more different.
 * Have true always mist option can be turned on, then enter any room always enter the mist first.
 
 ## Installation
-1. Download [BepInEx](https://github.com/BepInEx/BepInEx) and [install](https://docs.bepinex.dev/articles/user_guide/installation/index.html).
+
+1. Download [BepInEx](https://github.com/BepInEx/BepInEx)
+   and [install](https://docs.bepinex.dev/articles/user_guide/installation/index.html).
 2. Download [BepinEx-Utils](https://github.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/releases/latest).
 3. Extract all the .dll file to `game folder/BepInEx/plugins`
 4. Launch game
 
 ## Configuration
+
 The mod configuration file name is `io.github.ykysnk.AlwaysMist.cfg` inside `game folder/BepInEx/config`,
-If you are not using any mod manager, you can manually change the value, also if you installed [BepinEx Configuration Manager](https://github.com/BepInEx/BepInEx.ConfigurationManager)
+If you are not using any mod manager, you can manually change the value, also if you
+installed [BepinEx Configuration Manager](https://github.com/BepInEx/BepInEx.ConfigurationManager),
 you can change any values in game instead.
 
-**The `TrueAlwaysMist` config will ignore `ResetMazeSaveData`, `RandomNeededCorrectDoors`, `RestBenchInMist` config values.
+**The `TrueAlwaysMist` config will ignore `ResetMazeSaveData`, `RandomNeededCorrectDoors`, `RestBenchInMist` config
+values.
 Also turn on the config, enter any doors or any room will enter the mist area first!**
 
+* `ResetMazeSaveData`
+    * Type: `boolean`
+    * Default: `false`
+    * Description:
+        * Always reset maze save data when enter even you're not death.
+* `RandomNeededCorrectDoors`
+    * Type: `boolean`
+    * Default: `false`
+    * Description:
+        * Random the correct doors needed when enter every single times.
+* `MaxRandomNeededCorrectDoors`
+    * Type: `integer`
+    * Default: `10`
+    * Min: `2`
+    * Max: `100`
+    * Description:
+        * The max value of random the correct doors needed.
+* `MinRandomNeededCorrectDoors`
+    * Type: `integer`
+    * Default: `2`
+    * Min: `2`
+    * Max: `100`
+    * Description:
+        * The min value of random the correct doors needed.
+* `TrueAlwaysMist`
+    * Type: `boolean`
+    * Default: `false`
+    * Description:
+        * Always enter mist maze first
+* `RestBenchInMist`
+    * Type: `boolean`
+    * Default: `false`
+    * Description:
+        * Turn on rest bench in mist maze
+
 ## Known issue
+
 * The mist area is only one side, after pass through the mist area you won't back to the mist last hall.
-I'm lazy, So I won't fix this.
+  I'm lazy, So I won't fix this.
 * When player pass through the mist area, enter again will exit immediately, until player death.
-The can be easily fixed by turn on `ResetMazeSaveData` config, also turn on `TrueAlwaysMist` config will not have the issue.
+  The can be easily fixed by turn on `ResetMazeSaveData` config, also turn on `TrueAlwaysMist` config will not have the
+  issue.
 * You can turn on `TrueAlwaysMist` config then start new game, but will be very painful if you don't have any abilities.
-So recommend install some abilities unlocked mod.
+  So recommend install some abilities unlocked mod.
