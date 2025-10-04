@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.0.13](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.12...v0.0.13) (2025-10-04)
+
+### Bug Fixes
+
+* Change description of configs ([ac092b0](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/ac092b0017e7511a2c682a1d009dc0954647afe1))
+
+* Clean code ([b2d1e15](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b2d1e1579193b37d1ea2717ec9f1757c9ad03fc8))
+
 ### [0.0.12](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.11...v0.0.12) (2025-09-26)
 
 ### Bug Fixes
