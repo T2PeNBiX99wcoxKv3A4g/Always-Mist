@@ -61,7 +61,7 @@ Also turn on the config, enter any doors, or any room will enter the mist area f
     * Type: `boolean`
     * Default: `false`
     * Description:
-        * Turn on the rest bench in mist maze
+        * Turn on the rest bench in the mist maze.
 
 ## Known issue
 
