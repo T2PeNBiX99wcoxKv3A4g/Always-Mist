@@ -16,7 +16,7 @@ public static class DesktopPlatformEX
 
         if (!Directory.Exists(modSavePath))
             Directory.CreateDirectory(modSavePath);
-        
+
         return modSavePath;
     }
 }

@@ -9,7 +9,7 @@ namespace AlwaysMist;
 [BepInPlugin(Utils.Guid, Utils.Name, Utils.Version)]
 public class Main : BaseUnityPlugin
 {
-    private readonly Harmony _harmony = new(Utils.Guid);
+    private const string SectionOptions = "Options";
 
     internal static ConfigEntry<bool>? ResetMazeSaveData;
     internal static ConfigEntry<bool>? RandomNeededCorrectDoors;
@@ -17,8 +17,7 @@ public class Main : BaseUnityPlugin
     internal static ConfigEntry<int>? MinRandomNeededCorrectDoors;
     internal static ConfigEntry<bool>? TrueAlwaysMist;
     internal static ConfigEntry<bool>? RestBenchInMist;
-
-    private const string SectionOptions = "Options";
+    private readonly Harmony _harmony = new(Utils.Guid);
 
     private void Awake()
     {

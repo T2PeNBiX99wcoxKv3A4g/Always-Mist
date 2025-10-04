@@ -1,69 +1,69 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <LangVersion>latest</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>\Lib\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>\Lib\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx">
-      <HintPath>\Lib\BepInEx.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx.Harmony">
-      <HintPath>\Lib\BepInEx.Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInExUtils">
-      <HintPath>\Lib\BepInExUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="HarmonyXInterop">
-      <HintPath>\Lib\HarmonyXInterop.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod.RuntimeDetour">
-      <HintPath>\Lib\MonoMod.RuntimeDetour.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod.Utils">
-      <HintPath>\Lib\MonoMod.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json.UnityConverters">
-      <HintPath>Lib\Newtonsoft.Json.UnityConverters.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json.UnityConverters.Addressables">
-      <HintPath>Lib\Newtonsoft.Json.UnityConverters.Addressables.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json.UnityConverters.Mathematics">
-      <HintPath>Lib\Newtonsoft.Json.UnityConverters.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="TeamCherry.SharedUtils">
-      <HintPath>Lib\TeamCherry.SharedUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>\Lib\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>\Lib\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>\Lib\UnityEngine.InputLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>\Lib\UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+            <HintPath>\Lib\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>\Lib\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+            <HintPath>\Lib\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx.Harmony">
+            <HintPath>\Lib\BepInEx.Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInExUtils">
+            <HintPath>\Lib\BepInExUtils.dll</HintPath>
+        </Reference>
+        <Reference Include="HarmonyXInterop">
+            <HintPath>\Lib\HarmonyXInterop.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMod.RuntimeDetour">
+            <HintPath>\Lib\MonoMod.RuntimeDetour.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMod.Utils">
+            <HintPath>\Lib\MonoMod.Utils.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json.UnityConverters">
+            <HintPath>Lib\Newtonsoft.Json.UnityConverters.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json.UnityConverters.Addressables">
+            <HintPath>Lib\Newtonsoft.Json.UnityConverters.Addressables.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json.UnityConverters.Mathematics">
+            <HintPath>Lib\Newtonsoft.Json.UnityConverters.Mathematics.dll</HintPath>
+        </Reference>
+        <Reference Include="TeamCherry.SharedUtils">
+            <HintPath>Lib\TeamCherry.SharedUtils.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>\Lib\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>\Lib\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+            <HintPath>\Lib\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputModule">
+            <HintPath>\Lib\UnityEngine.InputModule.dll</HintPath>
+        </Reference>
+    </ItemGroup>
 
-  <ItemGroup>
-    <Content Include=".github\workflows\pre-release.yml" />
-    <Content Include=".github\workflows\release.yml" />
-  </ItemGroup>
+    <ItemGroup>
+        <Content Include=".github\workflows\pre-release.yml"/>
+        <Content Include=".github\workflows\release.yml"/>
+    </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
 using AlwaysMist.Proxy;
 using HarmonyLib;
-using TeamCherry.SharedUtils;
 using Random = UnityEngine.Random;
 
 // ReSharper disable InconsistentNaming
@@ -66,9 +65,9 @@ internal class MazeControllerPatches
             : controller.TargetExitDoorDir;
         exitMatch.FogRotationRange().V = controller.TargetEntryDoorDir switch
         {
-            "left" => new MinMaxFloat(0, 0),
-            "right" => new MinMaxFloat(0, 3.1416f),
-            _ => new MinMaxFloat(0, 0)
+            "left" => new(0, 0),
+            "right" => new(0, 3.1416f),
+            _ => new(0, 0)
         };
 
         var ret = exitMatch.GetObject();

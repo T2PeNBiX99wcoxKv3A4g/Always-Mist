@@ -12,7 +12,7 @@ public static class Utils
     internal const string Version = "0.0.12";
 
     private static Logger? _logger;
-    public static Logger Logger => _logger ??= new Logger(Name);
+    public static Logger Logger => _logger ??= new(Name);
 
     // ReSharper disable once MemberCanBePrivate.Global
     public static string? GetDoorDir(string doorName)
