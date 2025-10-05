@@ -80,11 +80,6 @@ jobs:
         with:
           crate: typos-cli
 
-      - name: Check-out repository
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-
       - name: Pull changes
         run: git pull
 
@@ -115,11 +110,6 @@ jobs:
 
       - name: Build Executable
         run: dotnet build --configuration Release
-
-      - name: Check-out repository
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
 
       - name: Pull changes
         run: git pull
