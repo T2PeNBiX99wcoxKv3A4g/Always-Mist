@@ -17,7 +17,7 @@ jobs:
     runs-on: windows-latest
     outputs:
       new_tag: ${{ steps.tag_version.outputs.new_tag }}
-      changelog: ${{ steps.tag_version.outputs.changelog }}
+      changelog: ${{ steps.git-cliff2.outputs.content }}
     steps:
       - name: Check-out repository
         uses: actions/checkout@v4
@@ -35,8 +35,8 @@ jobs:
           pre_release_branches: "fast"
           custom_release_rules: "fix:prerelease,feat:prerelease"
 
-      - name: Clone `Change-Log-File-Generator` Python script
-        run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/Change-Log-File-Generator.git .change-log-generator
+      - name: Pull changes
+        run: git pull
 
       - name: Clone `CSharp-Workflow-Scripts` Python script
         run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
@@ -48,24 +48,13 @@ jobs:
           cache: 'pip'
 
       - name: Install Dependencies
-        run: |
-          pip install -r .change-log-generator/requirements.txt
-          pip install -r .scripts/requirements.txt
-
-      - name: Create `CHANGELOG.md` file
-        run: |
-          $changeLog = @"
-          ${{ steps.tag_version.outputs.changelog }}
-          "@
-          python .change-log-generator/change_log_generator.py $changeLog
+        run: pip install -r .scripts/requirements.txt
 
       - name: Change version in `Main.cs`
         run: python .scripts/change_version.py ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Remove all python scripts
-        run: |
-          Remove-Item -Force -Recurse .scripts
-          Remove-Item -Force -Recurse .change-log-generator
+        run: Remove-Item -Force -Recurse .scripts
 
       - name: Set git user
         uses: fregante/setup-git-user@v2
@@ -77,13 +66,50 @@ jobs:
         run: git add .
 
       - name: Commit changed files
-        run: "git commit -m 'Action: Update version in `Main.cs` and update `CHANGELOG.md`'"
+        run: "git commit -m 'Action: Update version in `Main.cs`'"
 
       - name: Fetch from fast
         run: git fetch origin fast
 
       - name: Push code to fast
         run: git push origin fast
+
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff
+        with:
+          config: https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff.toml
+          args: --verbose
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          OUTPUT: CHANGELOG.md
+          GITHUB_REPO: ${{ github.repository }}
+
+      - name: Check for changes
+        run: git status
+
+      - name: Stage changed files
+        run: git add .
+
+      - name: Commit changed files
+        run: "git commit -m 'Action: Upgrade `CHANGELOG.md`'"
+
+      - name: Fetch from master
+        run: git fetch origin master
+
+      - name: Push code to master
+        run: git push origin master
+
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v4
+        id: git-cliff2
+        with:
+          config: https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff.toml
+          args: --verbose --latest --strip header
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          OUTPUT: CHANGES.md
+          GITHUB_REPO: ${{ github.repository }}
 
       - name: Build Executable
         run: dotnet build --configuration Release
