@@ -20,7 +20,7 @@ namespace AlwaysMist;
 public partial class Main
 {
     private const string SectionOptions = "Options";
-    private const string Version = "0.1.3";
+    private const string Version = "0.1.4";
 
     protected override void PostAwake()
     {
