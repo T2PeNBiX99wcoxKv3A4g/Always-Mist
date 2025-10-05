@@ -74,6 +74,11 @@ jobs:
       - name: Push code to fast
         run: git push origin fast
 
+      - name: Install `typos-cli` from `crates.io`
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: typos-cli
+
       - name: Generate a changelog
         uses: orhun/git-cliff-action@v4
         id: git-cliff
