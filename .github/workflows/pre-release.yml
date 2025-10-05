@@ -78,8 +78,7 @@ jobs:
         uses: orhun/git-cliff-action@v4
         id: git-cliff
         with:
-          config: https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff.toml
-          args: --verbose
+          args: --verbose --config-url https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff.toml
           github_token: ${{ secrets.GITHUB_TOKEN }}
         env:
           OUTPUT: CHANGELOG.md
@@ -104,8 +103,7 @@ jobs:
         uses: orhun/git-cliff-action@v4
         id: git-cliff2
         with:
-          config: https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff.toml
-          args: --verbose --latest --strip header
+          args: --verbose --latest --strip header --config-url https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Git-Cliff-Template/refs/heads/master/cliff.toml
           github_token: ${{ secrets.GITHUB_TOKEN }}
         env:
           OUTPUT: CHANGES.md
