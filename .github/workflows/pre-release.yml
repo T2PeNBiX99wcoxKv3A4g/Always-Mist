@@ -20,7 +20,9 @@ jobs:
       changelog: ${{ steps.git-cliff2.outputs.content }}
     steps:
       - name: Check-out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup .Net Core
         uses: actions/setup-dotnet@v4
@@ -79,6 +81,11 @@ jobs:
         with:
           crate: typos-cli
 
+      - name: Check-out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
       - name: Generate a changelog
         uses: orhun/git-cliff-action@v4
         id: git-cliff
@@ -104,7 +111,15 @@ jobs:
       - name: Push code to master
         run: git push origin master
 
-      - name: Generate a changelog
+      - name: Build Executable
+        run: dotnet build --configuration Release
+
+      - name: Check-out repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Generate a release body
         uses: orhun/git-cliff-action@v4
         id: git-cliff2
         with:
@@ -113,9 +128,6 @@ jobs:
         env:
           OUTPUT: CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
-
-      - name: Build Executable
-        run: dotnet build --configuration Release
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
