@@ -4,14 +4,204 @@
 
 ### Action
 
+- Update version in `Main.cs` - ([e0a7d4f](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e0a7d4f4a2e5f0db8b5916351538520886ec9903))
+
+
+## [0.1.6](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.5..v0.1.6) - 2025-10-05
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Add `git pull` step to sync changes in release and pre-release scripts - ([4b29ffb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/4b29ffb7a9a07b2946319c3d3b0e271c7188b557))
+
+### Action
+
+- Update version in `Main.cs` - ([7cf2174](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/7cf217479979b932e49af2306fc672354cdefca8))
+
+
+## [0.1.5](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.4..v0.1.5) - 2025-10-05
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Upgrade `actions/checkout` to v5 and reorder workflow steps in release and pre-release scripts - ([ca46506](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/ca4650658661bf6dcbeeed29607c6c33a69f73ce))
+
+### Action
+
+- Upgrade `CHANGELOG.md` - ([0065a5f](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/0065a5fdf00508af13cb4e411c135143181bf54f))
 - Update version in `Main.cs` - ([c801f13](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c801f13aad83dbe840b8fdc3b51b490d383d9e0a))
 
 
-## [0.1.4] - 2025-10-05
+## [0.1.4](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.3..v0.1.4) - 2025-10-05
 
 ### 🐛 Bug Fixes
 
 - *(Workflow)* Add `typos-cli` installation step in release and pre-release scripts - ([3c42bef](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/3c42befaed82ec68724241a408dbec52b9fcbda5))
 
+### Action
+
+- Upgrade `CHANGELOG.md` - ([a64e8d6](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/a64e8d68ab0072674964c3c77115221a4f105ea0))
+- Update version in `Main.cs` - ([7bd78c2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/7bd78c2c514f3185e740e60c4e3065f664953ff3))
+
+
+## [0.1.3](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.2..v0.1.3) - 2025-10-05
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Using `--config-url` - ([a6c5bfb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/a6c5bfb6d3e9a171afb367423e9d30869ba035ae))
+
+### Action
+
+- Upgrade `CHANGELOG.md` - ([6daea94](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/6daea948be937294c4ba2608bd4f1c13c4952182))
+- Update version in `Main.cs` - ([c2243e9](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c2243e91badd3bdb3189ae91e6654e57f72a1c63))
+
+
+## [0.1.2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.1..v0.1.2) - 2025-10-05
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Migrate to `git-cliff` for changelog generation - ([2a592db](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/2a592db98675ee4858b9eb9e78742ab0d5409bb6))
+- Clean code - ([42ab539](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/42ab5390ce75ccc391f9a72ee72f6836529adb31))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([cfd2e72](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/cfd2e72b3bc1bd8562c84e640d258c2469fd6f54))
+
+
+## [0.1.1](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.0..v0.1.1) - 2025-10-05
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Update version target from `Utils.cs` to `Main.cs` in release and pre-release scripts - ([81bede1](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/81bede1f11899861c24b04011f1435ce4de1c28f))
+
+
+## [0.1.0](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.13..v0.1.0) - 2025-10-05
+
+### ⛰️  Features
+
+- Upgrade with generated code and clean up code - ([dca8d7e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/dca8d7e8fd1c50363032e54c235ae6099ef9fa06))
+
+### Action
+
+- Update version in `Utils.cs` and update `CHANGELOG.md` - ([01b2c72](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/01b2c723627c3efbff08f9a9e5765dfb41bfa590))
+
+
+## [0.0.13](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.12..v0.0.13) - 2025-10-04
+
+### 🐛 Bug Fixes
+
+- Change description of configs - ([ac092b0](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/ac092b0017e7511a2c682a1d009dc0954647afe1))
+- Clean code - ([b2d1e15](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b2d1e1579193b37d1ea2717ec9f1757c9ad03fc8))
+
+### Action
+
+- Update version in `Utils.cs` and update `CHANGELOG.md` - ([a674bbd](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/a674bbd5e7ab84009923248bf1f14d96c8f9db23))
+
+
+## [0.0.12](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.11..v0.0.12) - 2025-09-26
+
+### 🐛 Bug Fixes
+
+- Upgrade .dll - ([cc6f92e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/cc6f92e086bc0a557af2361ce4dad7110ab25b0c))
+
+### Action
+
+- Update version in `Utils.cs` and update `CHANGELOG.md` - ([2240213](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/224021322e614031609bca642f5c316f1d2b9f9d))
+
+
+## [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.10..v0.0.11) - 2025-09-25
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Remove `cache-dependency-path` - ([edf45f8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/edf45f8e258df85628444b87f95c2adf19f42923))
+
+
+## [0.0.10](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.9..v0.0.10) - 2025-09-25
+
+### 🐛 Bug Fixes
+
+- *(README)* Upgrade `README.md` - ([7872941](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/787294149488304716d5fb60a44f0b5e8e38e44a))
+- *(Workflow)* Upgrade change log generator - ([3a8bb2c](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/3a8bb2ceb47be957b02ea38c65bd508fb9e89b6f))
+
+
+## [0.0.9](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.8..v0.0.9) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- Add `paths-ignore` to workflow - ([e17512d](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e17512dc819b926f06992b20128407afce1fb9af))
+
+### Action
+
+- Update version in `Utils.cs` and update `CHANGELOG.md` - ([dc50d66](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/dc50d66f292a823b8c5c37d38740eb94bf4bd5c2))
+
+
+## [0.0.8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.7..v0.0.8) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Create `CHANGELOG.md` - ([5b01f71](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/5b01f71074b001f898a227cbfb36c95f5de25e6f))
+
+### Action
+
+- Update version in `Utils.cs` - ([f1b2fcd](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/f1b2fcd9131def30289fd9d8f39b8dcf9cfdb212))
+
+## New Contributors ❤️
+
+* @github-actions[bot] made their first contribution
+
+## [0.0.7](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.6..v0.0.7) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Remove folder with powershel command - ([31b4c8d](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/31b4c8de55c7626cd22f0ee1a4b29e0a21925f47))
+
+
+## [0.0.6](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.5..v0.0.6) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Fix file path - ([d7b40a0](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/d7b40a04d52ca1150869e91294cda3f40be5070b))
+
+
+## [0.0.5](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.4..v0.0.5) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Fix workflows - ([8045a2e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/8045a2e4dc9f5cba2302037038b59868e08973dd))
+- *(Workflow)* Upgrade workflows - ([a3d6e41](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/a3d6e41c743ee18552cd0dc6e4d8fd8b205b78f6))
+
+
+## [0.0.4](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.3..v0.0.4) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(README)* Upgrade `README.md` - ([f3fbaeb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/f3fbaeb20707f31be0cbfa4cd158d66c3c295836))
+
+
+## [0.0.3](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.2..v0.0.3) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(LICENSE)* Add `LICENSE` file - ([3d516ca](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/3d516ca51a0a91bf5dcef28676ca7aa8092eb0ac))
+
+
+## [0.0.2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.1..v0.0.2) - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(README)* Upgrade `README.md` - ([792f53b](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/792f53b7ca733a37fb911dd35cad2487500d343d))
+
+
+## [0.0.1] - 2025-09-24
+
+### 🐛 Bug Fixes
+
+- *(Main)* Change description of `TrueAlwaysMist` config - ([2775715](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/2775715643d47169298377188a6ee59c5d4027c0))
+- *(TransitionPointPatches)* Also check `entryPoint` to get door side - ([3f1e7ca](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/3f1e7ca155224db6a8814ad0417b1ff3ccbf9eff))
+- Add `README.md` and workflow files - ([9af977f](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/9af977f6e0a3459ba3967e887f46af822db77b7e))
+- Upgrade dll - ([c0e572c](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c0e572c1c590ac7f6019c338f8a61b230954f23d))
+- Maze will change enter side when player enter left side door - ([9e51e4d](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/9e51e4da694f8dd9ff227ab9c1f7a00253488d80))
+
+## New Contributors ❤️
+
+* @T2PeNBiX99wcoxKv3A4g made their first contribution
 
 <!-- generated by git-cliff -->
