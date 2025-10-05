@@ -1,18 +1,11 @@
-global using BepInExUtils.EX;
 global using AlwaysMist.EX;
-using Logger = BepInExUtils.Logger;
 
 namespace AlwaysMist;
 
-public static class Utils
+public static partial class Utils
 {
-    internal const string Guid = "io.github.ykysnk.AlwaysMist";
-    internal const string Name = "Always Mist";
     internal const string FolderName = "AlwaysMist";
-    internal const string Version = "0.0.13";
-
-    private static Logger? _logger;
-    public static Logger Logger => _logger ??= new(Name);
+    internal const string GameName = "Hollow Knight Silksong.exe";
 
     // ReSharper disable once MemberCanBePrivate.Global
     public static string? GetDoorDir(string doorName)

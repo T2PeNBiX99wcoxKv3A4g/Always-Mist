@@ -1,44 +1,29 @@
-﻿using System.Reflection;
-using BepInEx;
-using BepInEx.Configuration;
-using HarmonyLib;
+﻿using BepInEx;
+using BepInExUtils.Attributes;
 using UnityEngine;
 
 namespace AlwaysMist;
 
-[BepInPlugin(Utils.Guid, Utils.Name, Utils.Version)]
-public class Main : BaseUnityPlugin
+[BepInUtils("io.github.ykysnk.AlwaysMist", "Always Mist", Version)]
+[BepInProcess(Utils.GameName)]
+[ConfigBind<bool>("ResetMazeSaveData", SectionOptions, false,
+    "Always reset maze save data when enter even if you're not dead.")]
+[ConfigBind<bool>("RandomNeededCorrectDoors", SectionOptions, false,
+    "Random the correct doors are needed when enter every single time.")]
+[ConfigBind<int>("MaxRandomNeededCorrectDoors", SectionOptions, 10, "The max value of random the correct doors needed.",
+    2, 100)]
+[ConfigBind<int>("MinRandomNeededCorrectDoors", SectionOptions, 2, "The min value of random the correct doors needed.",
+    2, 100)]
+[ConfigBind<bool>("TrueAlwaysMist", SectionOptions, false,
+    "Always enter the mist maze first when entering any rooms or any doors.")]
+[ConfigBind<bool>("RestBenchInMist", SectionOptions, false, "Turn on the rest bench in the mist maze.")]
+public partial class Main
 {
     private const string SectionOptions = "Options";
+    private const string Version = "0.0.13";
 
-    internal static ConfigEntry<bool>? ResetMazeSaveData;
-    internal static ConfigEntry<bool>? RandomNeededCorrectDoors;
-    internal static ConfigEntry<int>? MaxRandomNeededCorrectDoors;
-    internal static ConfigEntry<int>? MinRandomNeededCorrectDoors;
-    internal static ConfigEntry<bool>? TrueAlwaysMist;
-    internal static ConfigEntry<bool>? RestBenchInMist;
-    private readonly Harmony _harmony = new(Utils.Guid);
-
-    private void Awake()
+    protected override void PostAwake()
     {
-        Utils.Logger.Info($"Plugin {Utils.Name} loaded, version {Utils.Version}");
-        _harmony.PatchAll(Assembly.GetExecutingAssembly());
-
-        ResetMazeSaveData = Config.Bind(SectionOptions, nameof(ResetMazeSaveData), false,
-            "Always reset maze save data when enter even if you're not dead.");
-        RandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(RandomNeededCorrectDoors), false,
-            "Random the correct doors are needed when enter every single time.");
-        MaxRandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(MaxRandomNeededCorrectDoors), 10,
-            new ConfigDescription("The max value of random the correct doors needed.",
-                new AcceptableValueRange<int>(2, 100)));
-        MinRandomNeededCorrectDoors = Config.Bind(SectionOptions, nameof(MinRandomNeededCorrectDoors), 2,
-            new ConfigDescription("The min value of random the correct doors needed.",
-                new AcceptableValueRange<int>(2, 100)));
-        TrueAlwaysMist = Config.Bind(SectionOptions, nameof(TrueAlwaysMist), false,
-            "Always enter the mist maze first when entering any rooms or any doors.");
-        RestBenchInMist =
-            Config.Bind(SectionOptions, nameof(RestBenchInMist), false, "Turn on the rest bench in the mist maze.");
-
         var obj = new GameObject(nameof(AlwaysMistController));
         obj.AddComponent<AlwaysMistController>();
         DontDestroyOnLoad(obj);

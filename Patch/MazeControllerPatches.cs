@@ -16,12 +16,11 @@ internal class MazeControllerPatches
         if (__instance.isActive().V) return;
         var controller = AlwaysMistController.Instance;
         if (!controller) return;
-        // ReSharper disable once InvertIf
-        if (Main.RandomNeededCorrectDoors is { Value: true } || Main.TrueAlwaysMist is { Value: true })
+        if (Configs.RandomNeededCorrectDoors || Configs.TrueAlwaysMist)
         {
             if (controller.LastRandomValue < 0)
-                controller.LastRandomValue = Random.Range(Main.MinRandomNeededCorrectDoors.Value(),
-                    Main.MaxRandomNeededCorrectDoors.Value());
+                controller.LastRandomValue = Random.Range(Configs.MinRandomNeededCorrectDoors,
+                    Configs.MaxRandomNeededCorrectDoors);
             __instance.neededCorrectDoors().V = controller.LastRandomValue;
             __instance.restScenePoint().V = (int)Math.Round(controller.LastRandomValue / 2f);
         }
@@ -31,7 +30,7 @@ internal class MazeControllerPatches
             __instance.exitSceneName().V = controller.TargetSceneName;
 
         if (controller.CurrentSceneName != AlwaysMistController.MazeEntranceSceneName) return;
-        if (Main.TrueAlwaysMist is not { Value: true }) return;
+        if (!Configs.TrueAlwaysMist) return;
         if (string.IsNullOrEmpty(controller.TargetEntryDoorDir) || controller.TargetEntryDoorDir == "left") return;
         var newDoors = TransitionPoint.TransitionPoints.FirstOrDefault(door =>
             door.gameObject.scene == __instance.gameObject.scene &&
@@ -51,7 +50,7 @@ internal class MazeControllerPatches
     {
         var controller = AlwaysMistController.Instance;
         if (!controller) return true;
-        if (Main.TrueAlwaysMist is not { Value: true }) return true;
+        if (!Configs.TrueAlwaysMist) return true;
         if (string.IsNullOrEmpty(controller.TargetSceneName)) return true;
         if (!controller.IsEnteredMaze) return true;
 
@@ -83,7 +82,7 @@ internal class MazeControllerPatches
     {
         var controller = AlwaysMistController.Instance;
         if (!controller) return true;
-        if (Main.TrueAlwaysMist is not { Value: true }) return true;
+        if (!Configs.TrueAlwaysMist) return true;
 
         door.OnBeforeTransition += () =>
         {

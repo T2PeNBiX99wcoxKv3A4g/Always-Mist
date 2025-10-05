@@ -62,7 +62,7 @@ public class AlwaysMistController : MonoBehaviour
 
         EnterMazeHandle();
 
-        if (Main.TrueAlwaysMist is { Value: true })
+        if (Configs.TrueAlwaysMist)
         {
             if (IsOutsideMaze)
             {
@@ -105,8 +105,7 @@ public class AlwaysMistController : MonoBehaviour
 
     private void TurnOnRestBench()
     {
-        if (CurrentSceneName != MazeEntranceSceneName || (Main.RestBenchInMist is not { Value: true } &&
-                                                          Main.TrueAlwaysMist is not { Value: true })) return;
+        if (CurrentSceneName != MazeEntranceSceneName || (!Configs.RestBenchInMist && !Configs.TrueAlwaysMist)) return;
         var restBenches = FindObjectsByType<RestBench>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         Utils.Logger.Debug($"Find RestBenchs: {restBenches}");
@@ -163,7 +162,7 @@ public class AlwaysMistController : MonoBehaviour
         if (!string.IsNullOrEmpty(exitDoorName) && point.entryPoint != exitDoorName)
             point.SetTargetDoor(exitDoorName);
 
-        if (Main.ResetMazeSaveData is { Value: true } || Main.TrueAlwaysMist is { Value: true })
+        if (Configs.ResetMazeSaveData || Configs.TrueAlwaysMist)
             MazeController.ResetSaveData();
     }
 
@@ -195,7 +194,7 @@ public class AlwaysMistController : MonoBehaviour
                 ChangedTransitionPoint.Add(point, targetScene);
         }
 
-        if (Main.ResetMazeSaveData is { Value: true } || Main.TrueAlwaysMist is { Value: true })
+        if (Configs.ResetMazeSaveData || Configs.TrueAlwaysMist)
             MazeController.ResetSaveData();
     }
 

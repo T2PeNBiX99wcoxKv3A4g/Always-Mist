@@ -11,7 +11,7 @@ internal static class TransitionPointPatches
     [HarmonyPrefix]
     private static void DoSceneTransition(TransitionPoint __instance, bool doFade)
     {
-        if (Main.TrueAlwaysMist is not { Value: true }) return;
+        if (!Configs.TrueAlwaysMist) return;
         var controller = AlwaysMistController.Instance;
         if (!controller || !controller.IsOutsideMaze ||
             !controller.ChangedTransitionPoint.TryGetValue(__instance, out var oldTargetScene)) return;
