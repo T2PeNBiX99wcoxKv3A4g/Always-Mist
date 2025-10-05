@@ -4,6 +4,18 @@
 
 ### Action
 
+- Update version in `Main.cs` - ([89daf68](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/89daf68cbe3201f4007b8204162620fa4e990bd6))
+
+
+## [0.1.7](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.6..v0.1.7) - 2025-10-05
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Remove duplicate `actions/checkout` steps from release and pre-release scripts - ([780759c](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/780759cb92f6fe0c8ad2d7b8a69227b795a2d3d9))
+
+### Action
+
+- Upgrade `CHANGELOG.md` - ([8dcdfc2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/8dcdfc2cb61d9121f195841d4f94347d5d028811))
 - Update version in `Main.cs` - ([e0a7d4f](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e0a7d4f4a2e5f0db8b5916351538520886ec9903))
 
 
