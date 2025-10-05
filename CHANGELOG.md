@@ -1,33 +1,10 @@
-# Changelog
+## [unreleased]
 
-## [0.1.1](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.0...v0.1.1) (2025-10-05)
+### 💼 Other
 
-### Bug Fixes
+- Update version in `Main.cs`
+## [0.1.2] - 2025-10-05
 
-* **Workflow:** Update version target from Utils.cs to Main.cs in release and pre-release scripts ([81bede1](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/81bede1f11899861c24b04011f1435ce4de1c28f))
+### 🐛 Bug Fixes
 
-## [0.0.13](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.12...v0.0.13) (2025-10-04)
-
-### Bug Fixes
-
-* Change description of configs ([ac092b0](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/ac092b0017e7511a2c682a1d009dc0954647afe1))
-
-* Clean code ([b2d1e15](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b2d1e1579193b37d1ea2717ec9f1757c9ad03fc8))
-
-## [0.0.12](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.11...v0.0.12) (2025-09-26)
-
-### Bug Fixes
-
-* Upgrade .dll ([cc6f92e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/cc6f92e086bc0a557af2361ce4dad7110ab25b0c))
-
-## [0.0.11](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.10...v0.0.11) (2025-09-25)
-
-### Bug Fixes
-
-* **Workflow:** Remove cache-dependency-path ([edf45f8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/edf45f8e258df85628444b87f95c2adf19f42923))
-
-## [0.0.8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.0.7...v0.0.8) (2025-09-24)
-
-### Bug Fixes
-
-* **Workflow:** Create CHANGELOG.md ([5b01f71](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/5b01f71074b001f898a227cbfb36c95f5de25e6f))
+- Clean code
