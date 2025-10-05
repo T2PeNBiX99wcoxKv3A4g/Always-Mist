@@ -58,8 +58,8 @@ jobs:
           "@
           python .change-log-generator/change_log_generator.py $changeLog
 
-      - name: Change version in `Utils.cs`
-        run: python .scripts/change_version.py ./Utils.cs Version ${{ steps.tag_version.outputs.new_tag }}
+      - name: Change version in `Main.cs`
+        run: python .scripts/change_version.py ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Remove all python scripts
         run: |
@@ -76,7 +76,7 @@ jobs:
         run: git add .
 
       - name: Commit changed files
-        run: "git commit -m 'Action: Update version in `Utils.cs` and update `CHANGELOG.md`'"
+        run: "git commit -m 'Action: Update version in `Main.cs` and update `CHANGELOG.md`'"
 
       - name: Fetch from master
         run: git fetch origin master
