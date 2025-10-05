@@ -83,7 +83,7 @@ jobs:
         env:
           OUTPUT: CHANGELOG.md
           GITHUB_REPO: ${{ github.repository }}
-          
+
       - name: Check for changes
         run: git status
 
