@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.11](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.10..v0.1.11) - 2025-10-06
+
+### 🚜 Refactor
+
+- Replace `TraverseEX` wrappers with properties and improve field accesses - ([c567b06](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c567b06b6dc2cb6b6e182ce9969ebe9dfbfb0c76))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([6886cbe](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/6886cbecdea048ed4acc71288ac2a5001c6df31f))
+
+
 ## [0.1.10](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.9..v0.1.10) - 2025-10-06
 
 ### 🐛 Bug Fixes
