@@ -1,9 +1,14 @@
 # Changelog
 
-## [unreleased]
+## [0.1.8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.7..v0.1.8) - 2025-10-06
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Reorder and refine workflow steps in release and pre-release scripts - ([1995cd2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/1995cd2083b12ed22dbc47c8beea851a0b679c5d))
 
 ### Action
 
+- Upgrade `CHANGELOG.md` - ([b0a4f57](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b0a4f571e0db3224e755a65c20791d8fef1a5b78))
 - Update version in `Main.cs` - ([89daf68](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/89daf68cbe3201f4007b8204162620fa4e990bd6))
 
 
