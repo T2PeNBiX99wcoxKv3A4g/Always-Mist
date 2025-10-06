@@ -1,9 +1,11 @@
 using BepInExUtils.Proxy;
 using HarmonyLib;
+using JetBrains.Annotations;
 using TeamCherry.SharedUtils;
 
 namespace AlwaysMist.Proxy;
 
+[UsedImplicitly]
 public class MazeControllerEntryMatchProxy : ClassProxy
 {
     public MazeControllerEntryMatchProxy() : base("MazeController+EntryMatch")
@@ -14,12 +16,29 @@ public class MazeControllerEntryMatchProxy : ClassProxy
     {
     }
 
-    public TraverseEX<string> EntryScene() => new(Traverse.Create(Instance).Field<string>(nameof(EntryScene)));
-    public TraverseEX<string> EntryDoorDir() => new(Traverse.Create(Instance).Field<string>(nameof(EntryDoorDir)));
-    public TraverseEX<string> ExitDoorDir() => new(Traverse.Create(Instance).Field<string>(nameof(ExitDoorDir)));
+    public string EntryScene
+    {
+        get => Traverse.Create(Instance).Field<string>(nameof(EntryScene)).Value;
+        set => Traverse.Create(Instance).Field<string>(nameof(EntryScene)).Value = value;
+    }
 
-    public TraverseEX<MinMaxFloat> FogRotationRange() =>
-        new(Traverse.Create(Instance).Field<MinMaxFloat>(nameof(FogRotationRange)));
+    public string EntryDoorDir
+    {
+        get => Traverse.Create(Instance).Field<string>(nameof(EntryDoorDir)).Value;
+        set => Traverse.Create(Instance).Field<string>(nameof(EntryDoorDir)).Value = value;
+    }
+
+    public string ExitDoorDir
+    {
+        get => Traverse.Create(Instance).Field<string>(nameof(ExitDoorDir)).Value;
+        set => Traverse.Create(Instance).Field<string>(nameof(ExitDoorDir)).Value = value;
+    }
+
+    public MinMaxFloat FogRotationRange
+    {
+        get => Traverse.Create(Instance).Field<MinMaxFloat>(nameof(FogRotationRange)).Value;
+        set => Traverse.Create(Instance).Field<MinMaxFloat>(nameof(FogRotationRange)).Value = value;
+    }
 
     public object? GetObject() => Instance;
 }

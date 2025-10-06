@@ -1,4 +1,5 @@
 using HarmonyLib;
+using JetBrains.Annotations;
 
 // ReSharper disable InconsistentNaming
 
@@ -6,17 +7,23 @@ namespace AlwaysMist.EX;
 
 public static class DesktopPlatformEX
 {
-    public static TraverseEX<string> saveDirPath(this DesktopPlatform instance) =>
-        new(Traverse.Create(instance).Field<string>(nameof(saveDirPath)));
-
-    public static string GetSavePath(this DesktopPlatform instance)
+    extension(DesktopPlatform instance)
     {
-        var gameSavePath = instance.saveDirPath();
-        var modSavePath = Path.Combine(gameSavePath, Utils.FolderName);
+        [UsedImplicitly]
+        public string saveDirPath
+        {
+            get => Traverse.Create(instance).Field<string>("saveDirPath").Value;
+            set => Traverse.Create(instance).Field<string>("saveDirPath").Value = value;
+        }
 
-        if (!Directory.Exists(modSavePath))
-            Directory.CreateDirectory(modSavePath);
+        public string GetSavePath()
+        {
+            var modSavePath = Path.Combine(instance.saveDirPath, Utils.FolderName);
 
-        return modSavePath;
+            if (!Directory.Exists(modSavePath))
+                Directory.CreateDirectory(modSavePath);
+
+            return modSavePath;
+        }
     }
 }

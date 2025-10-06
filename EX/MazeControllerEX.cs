@@ -1,41 +1,89 @@
 // ReSharper disable InconsistentNaming
 
 using HarmonyLib;
+using JetBrains.Annotations;
 
 namespace AlwaysMist.EX;
 
 public static class MazeControllerEX
 {
-    public static TraverseEX<bool> isCapScene(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<bool>(nameof(isCapScene)));
+    extension(MazeController instance)
+    {
+        [UsedImplicitly]
+        public bool isCapScene
+        {
+            get => Traverse.Create(instance).Field<bool>("isCapScene").Value;
+            set => Traverse.Create(instance).Field<bool>("isCapScene").Value = value;
+        }
 
-    public static TraverseEX<List<TransitionPoint>> entryDoors(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<List<TransitionPoint>>(nameof(entryDoors)));
+        [UsedImplicitly]
+        public List<TransitionPoint> entryDoors
+        {
+            get => Traverse.Create(instance).Field<List<TransitionPoint>>("entryDoors").Value;
+            set => Traverse.Create(instance).Field<List<TransitionPoint>>("entryDoors").Value = value;
+        }
 
-    public static TraverseEX<string[]> sceneNames(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<string[]>(nameof(sceneNames)));
+        [UsedImplicitly]
+        public string[] sceneNames
+        {
+            get => Traverse.Create(instance).Field<string[]>("sceneNames").Value;
+            set => Traverse.Create(instance).Field<string[]>("sceneNames").Value = value;
+        }
 
-    public static TraverseEX<int> neededCorrectDoors(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<int>(nameof(neededCorrectDoors)));
+        [UsedImplicitly]
+        public int neededCorrectDoors
+        {
+            get => Traverse.Create(instance).Field<int>("neededCorrectDoors").Value;
+            set => Traverse.Create(instance).Field<int>("neededCorrectDoors").Value = value;
+        }
 
-    public static TraverseEX<int> allowedIncorrectDoors(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<int>(nameof(allowedIncorrectDoors)));
+        [UsedImplicitly]
+        public int allowedIncorrectDoors
+        {
+            get => Traverse.Create(instance).Field<int>("allowedIncorrectDoors").Value;
+            set => Traverse.Create(instance).Field<int>("allowedIncorrectDoors").Value = value;
+        }
 
-    public static TraverseEX<int> restScenePoint(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<int>(nameof(restScenePoint)));
+        [UsedImplicitly]
+        public int restScenePoint
+        {
+            get => Traverse.Create(instance).Field<int>("restScenePoint").Value;
+            set => Traverse.Create(instance).Field<int>("restScenePoint").Value = value;
+        }
 
-    public static TraverseEX<string> restSceneName(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<string>(nameof(restSceneName)));
+        [UsedImplicitly]
+        public string restSceneName
+        {
+            get => Traverse.Create(instance).Field<string>("restSceneName").Value;
+            set => Traverse.Create(instance).Field<string>("restSceneName").Value = value;
+        }
 
-    public static TraverseEX<string> exitSceneName(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<string>(nameof(exitSceneName)));
+        [UsedImplicitly]
+        public string exitSceneName
+        {
+            get => Traverse.Create(instance).Field<string>("exitSceneName").Value;
+            set => Traverse.Create(instance).Field<string>("exitSceneName").Value = value;
+        }
 
-    public static TraverseEX<object[]> entryMatchExit(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<object[]>(nameof(entryMatchExit)));
+        [UsedImplicitly]
+        public object[] entryMatchExit
+        {
+            get => Traverse.Create(instance).Field<object[]>("entryMatchExit").Value;
+            set => Traverse.Create(instance).Field<object[]>("entryMatchExit").Value = value;
+        }
 
-    public static TraverseEX<bool> isActive(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<bool>(nameof(isActive)));
+        [UsedImplicitly]
+        public bool isActive
+        {
+            get => Traverse.Create(instance).Field<bool>("isActive").Value;
+            set => Traverse.Create(instance).Field<bool>("isActive").Value = value;
+        }
 
-    public static TraverseEX<List<TransitionPoint>> correctDoors(this MazeController instance) =>
-        new(Traverse.Create(instance).Field<List<TransitionPoint>>(nameof(correctDoors)));
+        [UsedImplicitly]
+        public List<TransitionPoint> correctDoors
+        {
+            get => Traverse.Create(instance).Field<List<TransitionPoint>>("correctDoors").Value;
+            set => Traverse.Create(instance).Field<List<TransitionPoint>>("correctDoors").Value = value;
+        }
+    }
 }
