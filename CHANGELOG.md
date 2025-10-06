@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.9](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.8..v0.1.9) - 2025-10-06
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Reorder steps and update commit message for version and changelog updates in pre-release script - ([935b8a6](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/935b8a6e4a86fa91afe9f6d083f5906be36456d8))
+
+### Action
+
+- Update version in `Main.cs` and Update `CHANGELOG.md` - ([e8d35c3](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e8d35c3d82b8ee86f9d6e12ab9dab9256c7b446c))
+
+
 ## [0.1.8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.7..v0.1.8) - 2025-10-06
 
 ### 🐛 Bug Fixes
