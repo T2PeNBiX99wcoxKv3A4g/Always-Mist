@@ -57,24 +57,6 @@ jobs:
       - name: Remove all python scripts
         run: Remove-Item -Force -Recurse .scripts
 
-      - name: Set git user
-        uses: fregante/setup-git-user@v2
-
-      - name: Check for changes
-        run: git status
-
-      - name: Stage changed files
-        run: git add .
-
-      - name: Commit changed files
-        run: "git commit -m 'Action: Update version in `Main.cs`'"
-
-      - name: Fetch from master
-        run: git fetch origin master
-
-      - name: Push code to master
-        run: git push origin master
-
       - name: Install `typos-cli` from `crates.io`
         uses: baptiste0928/cargo-install@v3
         with:
@@ -93,6 +75,9 @@ jobs:
           OUTPUT: CHANGELOG.md
           GITHUB_REPO: ${{ github.repository }}
 
+      - name: Set git user
+        uses: fregante/setup-git-user@v2
+
       - name: Check for changes
         run: git status
 
@@ -100,7 +85,7 @@ jobs:
         run: git add .
 
       - name: Commit changed files
-        run: "git commit -m 'Action: Upgrade `CHANGELOG.md`'"
+        run: "git commit -m 'Action: Update version in `Main.cs` and Update `CHANGELOG.md`'"
 
       - name: Fetch from master
         run: git fetch origin master

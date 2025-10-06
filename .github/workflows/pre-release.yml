@@ -101,7 +101,7 @@ jobs:
         run: git add .
 
       - name: Commit changed files
-        run: "git commit -m 'Action: Upgrade `CHANGELOG.md`'"
+        run: "git commit -m 'Action: Update `CHANGELOG.md`'"
 
       - name: Fetch from master
         run: git fetch origin master
