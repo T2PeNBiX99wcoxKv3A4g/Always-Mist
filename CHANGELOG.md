@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.10](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.9..v0.1.10) - 2025-10-06
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Correct capitalization in commit messages for release and pre-release scripts - ([8dca10c](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/8dca10c868583479a7e52321e978de7562b9a60e))
+
+### Action
+
+- Update version in `Main.cs` and Update `CHANGELOG.md` - ([e04a23f](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e04a23f3cc3671042871c2abb5472c80425b21f3))
+
+
 ## [0.1.9](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.8..v0.1.9) - 2025-10-06
 
 ### 🐛 Bug Fixes
