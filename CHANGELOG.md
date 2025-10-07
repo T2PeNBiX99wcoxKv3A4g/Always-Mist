@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.12](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.11..v0.1.12) - 2025-10-07
+
+### 🚜 Refactor
+
+- Migrate EX utility classes to BepInExUtils.Attributes and improve field access methods - ([078ba39](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/078ba39cbe6d7b0d24064a8b64d9f9b713a02b55))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([f9205f1](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/f9205f141d7114e08d24cdbef1f0481205fd81fc))
+
+
 ## [0.1.11](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.10..v0.1.11) - 2025-10-06
 
 ### 🚜 Refactor
