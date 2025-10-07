@@ -1,4 +1,4 @@
-global using AlwaysMist.EX;
+global using AlwaysMist.Extensions;
 
 namespace AlwaysMist;
 
