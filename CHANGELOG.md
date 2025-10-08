@@ -1,5 +1,44 @@
 # Changelog
 
+## [0.1.17](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.16..v0.1.17) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Update file paths and formatting in release script and project file - ([5809c6a](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/5809c6a0815bd4e671e831d7b859cc9f542cde90))
+
+
+## [0.1.16](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.15..v0.1.16) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Add `new_version` output from `change_version` step in release and pre-release scripts - ([4cce66c](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/4cce66c8417821beed5e7d8c27e81969ba0d61ef))
+
+
+## [0.1.15](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.14..v0.1.15) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Correct method name in version update step in release script - ([02ddd63](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/02ddd635c506ec1914b1dfe0934c855aceb87df3))
+
+
+## [0.1.14](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.13..v0.1.14) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Correct method name in version update commands in release and pre-release scripts - ([b7d6ecb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b7d6ecbf02d53bafc84c85a369d0bbdaa1c534b7))
+
+
+## [0.1.13](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.12..v0.1.13) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Update workflow scripts and add Thunderstore publishing configuration - ([02eb557](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/02eb557cb4d5487e05b09b4017e06104ef14c1c0))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([9c0b1cb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/9c0b1cbc0157e21bfc261ba5fbaa508416d01dcd))
+
+
 ## [0.1.12](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.11..v0.1.12) - 2025-10-07
 
 ### 🚜 Refactor
