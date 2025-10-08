@@ -59,7 +59,7 @@ jobs:
         run: echo get_version=$(curl "https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/refs/heads/master/.version") >> $GITHUB_OUTPUT
 
       - name: Change version in `thunderstore.toml`
-        run: python .scripts/change_version.py change_version ./.packaging/thunderstore.toml ykysnk-BepinExUtils ${{ steps.get_version.outputs.get_version }}
+        run: python .scripts/change_version.py change-version ./.packaging/thunderstore.toml ykysnk-BepinExUtils ${{ steps.get_version.outputs.get_version }}
 
       - name: Remove all python scripts
         run: Remove-Item -Force -Recurse .scripts
