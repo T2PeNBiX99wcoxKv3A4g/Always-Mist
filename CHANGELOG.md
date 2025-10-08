@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.18](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.17..v0.1.18) - 2025-10-08
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Add `--only-replace` flag to `change_version` step and update version files - ([6fb2ee3](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/6fb2ee36bcfe9c0cf5d91bfad7a43bf1d6ce137e))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([a4a2fea](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/a4a2fea3857d8f0f6811648dd9e362811b6a724a))
+
+
 ## [0.1.17](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.16..v0.1.17) - 2025-10-08
 
 ### 🐛 Bug Fixes
