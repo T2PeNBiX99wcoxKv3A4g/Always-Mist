@@ -61,7 +61,7 @@ jobs:
         run: python .scripts/get_version.py https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/refs/heads/master/.version
 
       - name: Change version in `thunderstore.toml`
-        run: python .scripts/change_version.py change-version ./.packaging/thunderstore.toml ykysnk-BepinExUtils ${{ steps.get_version.outputs.get_version }}
+        run: python .scripts/change_version.py change-version ./.packaging/thunderstore.toml ykysnk-BepinExUtils ${{ steps.get_version.outputs.get_version }} --only-replace
 
       - name: Remove all python scripts
         run: Remove-Item -Force -Recurse .scripts
