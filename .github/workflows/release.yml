@@ -55,10 +55,10 @@ jobs:
       - name: Change version in `Main.cs`
         id: change_version
         run: python .scripts/change_version.py change-version ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
-      
+
       - name: Get version from `BepinEx-Utils`
         id: get_version
-        run: python G:\Python\CSharp-Workflow-Scripts\get_version.py https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/refs/heads/master/.version
+        run: python .scripts/get_version.py https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/BepinEx-Utils/refs/heads/master/.version
 
       - name: Change version in `thunderstore.toml`
         run: python .scripts/change_version.py change-version ./.packaging/thunderstore.toml ykysnk-BepinExUtils ${{ steps.get_version.outputs.get_version }}
