@@ -2,6 +2,8 @@
 
 A mod lets you enter [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) again
 
+![icon.png](https://raw.githubusercontent.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/refs/heads/master/icon.png)
+
 ## What does this mod do?
 
 * The mod will reopen [the mist area](https://hollowknightsilksong.wiki.fextralife.com/The+Mist) even you finish the

@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup .Net Core
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '9.0'
 
@@ -44,16 +44,16 @@ jobs:
         run: git clone https://github.com/T2PeNBiX99wcoxKv3A4g/CSharp-Workflow-Scripts.git .scripts
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '>=3.13.7'
+          python-version: '>=3.14'
           cache: 'pip'
 
       - name: Install Dependencies
         run: pip install -r .scripts/requirements.txt
 
       - name: Change version in `Main.cs`
-        run: python .scripts/change_version.py ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
+        run: python .scripts/change_version.py change_version ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Remove all python scripts
         run: Remove-Item -Force -Recurse .scripts
@@ -124,12 +124,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Build Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
+        with:
+          path: release
+          merge-multiple: true
 
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release-windows/*.dll"
+          artifacts: "release/*"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ needs.windows-release-build.outputs.new_tag }}
           name: Pre Release ${{ needs.windows-release-build.outputs.new_tag }}
