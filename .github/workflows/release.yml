@@ -52,7 +52,7 @@ jobs:
         run: pip install -r .scripts/requirements.txt
 
       - name: Change version in `Main.cs`
-        run: python .scripts/change_version.py change_version ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
+        run: python .scripts/change_version.py change-version ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
       
       - name: Get version from `BepinEx-Utils`
         id: get_version
