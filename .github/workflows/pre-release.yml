@@ -17,6 +17,7 @@ jobs:
     runs-on: windows-latest
     outputs:
       new_tag: ${{ steps.tag_version.outputs.new_tag }}
+      new_version: ${{ steps.change_version.outputs.new_version }}
       changelog: ${{ steps.git-cliff2.outputs.content }}
     steps:
       - name: Check-out repository
@@ -53,6 +54,7 @@ jobs:
         run: pip install -r .scripts/requirements.txt
 
       - name: Change version in `Main.cs`
+        id: change_version
         run: python .scripts/change_version.py change-version ./Main.cs Version ${{ steps.tag_version.outputs.new_tag }}
 
       - name: Remove all python scripts
