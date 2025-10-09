@@ -5,13 +5,22 @@ using TeamCherry.SharedUtils;
 
 namespace AlwaysMist.Proxy;
 
+/// <summary>
+///     <see cref="MazeController" />.EntryMatch
+/// </summary>
 [UsedImplicitly]
 public class MazeControllerEntryMatchProxy : ClassProxy
 {
+    /// <summary>
+    ///     <see cref="MazeController" />.EntryMatch
+    /// </summary>
     public MazeControllerEntryMatchProxy() : base("MazeController+EntryMatch")
     {
     }
 
+    /// <summary>
+    ///     <see cref="MazeController" />.EntryMatch
+    /// </summary>
     public MazeControllerEntryMatchProxy(object obj) : base(obj, "MazeController+EntryMatch")
     {
     }

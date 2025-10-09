@@ -9,7 +9,7 @@ description = "A mod let you enter the mist area again"
 websiteUrl = "https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist"
 containsNsfwContent = false
 [package.dependencies]
-BepInEx-BepInExPack_Silksong = "5.4.2303"
+BepInEx-BepInExPack_Silksong = "5.4.2304"
 ykysnk-BepinExUtils = "0.4.4"
 
 [build]
