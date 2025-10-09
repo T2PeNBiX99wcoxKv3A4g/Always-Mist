@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.20](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.19..v0.1.20) - 2025-10-09
+
+### 🐛 Bug Fixes
+
+- Update `BepInEx-BepInExPack_Silksong` dependency version and XML comments in `MazeControllerEntryMatchProxy` - ([5315976](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/53159767901c0ee9ebe6ec3a2cfcb88b1d31ee57))
+- Remove `static` modifier from `Utils` and update `BepInExUtils.Generator.dll` - ([5e0feed](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/5e0feed9ef4f7871835decfd3255970d9d41c2ca))
+- Update `BepInExUtils.dll` file - ([55fd3cb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/55fd3cbdc73a0c982253916cd50e5410640b121e))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([e5b9f16](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e5b9f16a2c798938a4eb7ece8f37d7910ba48c6e))
+
+
 ## [0.1.19](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.18..v0.1.19) - 2025-10-09
 
 ### 🐛 Bug Fixes
