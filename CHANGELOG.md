@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.21](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.20..v0.1.21) - 2025-10-09
+
+### 🐛 Bug Fixes
+
+- Update `BepInExUtils.dll` and `BepInExUtils.Generator.dll` files - ([f4a07ad](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/f4a07ad2c257e99af133989d063c4f50c9b97878))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([fa2b831](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/fa2b831c4dc534d47d17e8b8044bfc071eaf734e))
+
+
 ## [0.1.20](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.19..v0.1.20) - 2025-10-09
 
 ### 🐛 Bug Fixes
