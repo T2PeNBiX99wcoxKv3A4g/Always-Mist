@@ -2,7 +2,7 @@ global using AlwaysMist.Extensions;
 
 namespace AlwaysMist;
 
-public static partial class Utils
+public partial class Utils
 {
     internal const string FolderName = "AlwaysMist";
     internal const string GameName = "Hollow Knight Silksong.exe";
