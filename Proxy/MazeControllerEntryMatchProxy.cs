@@ -49,5 +49,5 @@ public class MazeControllerEntryMatchProxy : ClassProxy
         set => Traverse.Create(Instance).Field<MinMaxFloat>(nameof(FogRotationRange)).Value = value;
     }
 
-    public object? GetObject() => Instance;
+    public object GetObject() => Instance;
 }

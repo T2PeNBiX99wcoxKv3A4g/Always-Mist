@@ -70,7 +70,6 @@ public class AlwaysMistController : MonoBehaviour
                 ChangeAllTransitionScene();
             }
             else
-            {
                 switch (CurrentSceneName)
                 {
                     case MazeEntranceSceneName:
@@ -94,7 +93,6 @@ public class AlwaysMistController : MonoBehaviour
                         FixExitTransition(); // Still need to fix entryPoint
                         break;
                 }
-            }
         }
         else if (CurrentSceneName is ChangeScene or ChangeScene2)
         {
@@ -126,9 +124,7 @@ public class AlwaysMistController : MonoBehaviour
     private void EnterMazeHandle()
     {
         if (CurrentSceneName == MazeEntranceSceneName)
-        {
             IsEnteredMaze = true;
-        }
         else if (IsEnteredMaze)
         {
             if (SceneNames.Contains(CurrentSceneName) || CurrentSceneName == MazeEntranceSceneName ||
