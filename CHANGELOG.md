@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.22](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.21..v0.1.22) - 2025-10-10
+
+### 🐛 Bug Fixes
+
+- Update .dll files - ([9b0080d](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/9b0080da8110b5a01a7e193bafa624bb410e7207))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([c15a4af](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c15a4afdfe534d39a4d824dc89039d1b58d7e1fc))
+
+
 ## [0.1.21](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.20..v0.1.21) - 2025-10-09
 
 ### 🐛 Bug Fixes
