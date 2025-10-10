@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.23](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.22..v0.1.23) - 2025-10-10
+
+### 🐛 Bug Fixes
+
+- Remove `BepInEx.Preloader` reference and adjust file paths in `AlwaysMist.csproj` - ([69127a6](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/69127a6c786df804f8489a0f45b3d19f8cf691bb))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([12df0da](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/12df0da94a0af8c6403fb2f5c18dda8e4aa71453))
+
+
 ## [0.1.22](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.21..v0.1.22) - 2025-10-10
 
 ### 🐛 Bug Fixes
