@@ -21,11 +21,26 @@
         <Reference Include="BepInEx.Harmony">
             <HintPath>\Lib\BepInEx.Harmony.dll</HintPath>
         </Reference>
+        <Reference Include="BepInEx.Preloader">
+          <HintPath>..\TestApp\Lib\BepInEx.Preloader.dll</HintPath>
+        </Reference>
         <Reference Include="BepInExUtils">
             <HintPath>\Lib\BepInExUtils.dll</HintPath>
         </Reference>
         <Reference Include="HarmonyXInterop">
             <HintPath>\Lib\HarmonyXInterop.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\TestApp\Lib\Mono.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Mdb">
+          <HintPath>..\TestApp\Lib\Mono.Cecil.Mdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Pdb">
+          <HintPath>..\TestApp\Lib\Mono.Cecil.Pdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Rocks">
+          <HintPath>..\TestApp\Lib\Mono.Cecil.Rocks.dll</HintPath>
         </Reference>
         <Reference Include="MonoMod.RuntimeDetour">
             <HintPath>\Lib\MonoMod.RuntimeDetour.dll</HintPath>
