@@ -1,3 +1,4 @@
+using AlwaysMist.Behaviour;
 using AlwaysMist.Proxy;
 using HarmonyLib;
 using Random = UnityEngine.Random;

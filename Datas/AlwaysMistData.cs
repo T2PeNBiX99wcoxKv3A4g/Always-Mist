@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 // ReSharper disable InconsistentNaming
 
-namespace AlwaysMist;
+namespace AlwaysMist.Datas;
 
 [JsonObject]
 [Serializable]

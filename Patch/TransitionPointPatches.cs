@@ -1,3 +1,4 @@
+using AlwaysMist.Behaviour;
 using HarmonyLib;
 
 // ReSharper disable InconsistentNaming

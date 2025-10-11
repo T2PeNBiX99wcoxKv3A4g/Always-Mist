@@ -1,8 +1,9 @@
 using System.Collections;
+using AlwaysMist.Datas;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AlwaysMist;
+namespace AlwaysMist.Behaviour;
 
 public class AlwaysMistController : MonoBehaviour
 {

@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using AlwaysMist.Behaviour;
+using BepInEx;
 using BepInExUtils.Attributes;
 using UnityEngine;
 
