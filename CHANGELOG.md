@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.24](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.23..v0.1.24) - 2025-10-11
+
+### 🐛 Bug Fixes
+
+- *(Workflow)* Add `git pull` step to release workflow - ([91778be](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/91778beb77396656700411c78f6e343dcdd8bfa8))
+- Update namespaces across files for improved structure and clarity - ([e3ebd57](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/e3ebd574e04c28edcf7f6bf1353d3737cbcc3410))
+- Update `BepInExUtils.dll` and `BepInExUtils.Generator.dll` files - ([4102e48](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/4102e4881e1c167705d639ec45efb10eb4eac175))
+- Remove unused braces in `AlwaysMistController` and update `GetObject` return type in `MazeControllerEntryMatchProxy` - ([b7181e8](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b7181e8b28eb6bc01b4fc26dc79e5528de7f1201))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([b20ef8f](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/b20ef8f9e79ed392a6326d57ff4972afc346b9d9))
+
+
 ## [0.1.23](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.22..v0.1.23) - 2025-10-10
 
 ### 🐛 Bug Fixes
