@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.26](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.25..v0.1.26) - 2025-10-15
+
+### 🐛 Bug Fixes
+
+- Add `BepInDependency` for `BepinExUtils` in `Main.cs` - ([ef8ab6b](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/ef8ab6b010dab27b82a94cefaca2bd95adc4cb18))
+- Update multiple DLL files in `Lib` directory - ([c19d23d](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c19d23d7c9515ba096d7fae1b26a8cca028b600a))
+- Replace `[UsedImplicitly]` with `[PublicAPI]` in `MazeControllerExtensions` - ([fc2a446](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/fc2a4460adef1d1387cf1058204a803bc66601c8))
+- Replace `[UsedImplicitly]` with `[PublicAPI]` in `MazeControllerEntryMatchProxy` - ([0266515](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/0266515a976947882d22313724c9319c11729e0c))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([0271d03](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/0271d03aaad6130cc4ddd4b1dba5e8e10d8e1986))
+
+
 ## [0.1.25](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.24..v0.1.25) - 2025-10-15
 
 ### 🐛 Bug Fixes
