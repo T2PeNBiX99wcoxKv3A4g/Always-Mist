@@ -28,19 +28,19 @@ public class MazeControllerEntryMatchProxy : ClassProxy
 
     public string EntryScene
     {
-        get => Native.GetFieldValue<string>(nameof(EntryScene));
+        get => Native.GetFieldValue<string>(nameof(EntryScene))!;
         set => Native.SetFieldValue(nameof(EntryScene), value);
     }
 
     public string EntryDoorDir
     {
-        get => Native.GetFieldValue<string>(nameof(EntryDoorDir));
+        get => Native.GetFieldValue<string>(nameof(EntryDoorDir))!;
         set => Native.SetFieldValue(nameof(EntryDoorDir), value);
     }
 
     public string ExitDoorDir
     {
-        get => Native.GetFieldValue<string>(nameof(ExitDoorDir));
+        get => Native.GetFieldValue<string>(nameof(ExitDoorDir))!;
         set => Native.SetFieldValue(nameof(ExitDoorDir), value);
     }
 
