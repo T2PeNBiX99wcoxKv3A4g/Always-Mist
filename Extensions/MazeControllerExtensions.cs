@@ -16,7 +16,7 @@ namespace AlwaysMist.Extensions;
 [AccessField<object[]>("entryMatchExit")]
 [AccessField<bool>("isActive")]
 [AccessField<List<TransitionPoint>>("correctDoors")]
-[UsedImplicitly]
+[PublicAPI]
 public static partial class MazeControllerExtensions
 {
 }
