@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.27](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.26..v0.1.27) - 2025-10-15
+
+### 🐛 Bug Fixes
+
+- Add null-forgiving operator to property getters in `MazeControllerEntryMatchProxy` - ([2ece2e2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/2ece2e2b211ad1f0bf2c501f05a5d3929e8df24e))
+- Update `BepInExUtils.dll` in `Lib` directory - ([3bbd8d2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/3bbd8d278e228f8c605996842c74f333ca03d684))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([7053e02](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/7053e02d4b9489f6a8dc9c5d876ad8227dcd9b23))
+
+
 ## [0.1.26](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.25..v0.1.26) - 2025-10-15
 
 ### 🐛 Bug Fixes

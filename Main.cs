@@ -22,7 +22,7 @@ namespace AlwaysMist;
 public partial class Main
 {
     private const string SectionOptions = "Options";
-    private const string Version = "0.1.26";
+    private const string Version = "0.1.27";
 
     protected override void PostAwake()
     {
