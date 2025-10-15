@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.25](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.24..v0.1.25) - 2025-10-15
+
+### 🐛 Bug Fixes
+
+- Clean up unused directives, update namespace structure, and adjust field/method access modifiers - ([f7b7deb](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/f7b7deb24ba94772ae8938ff04ec280f391c0370))
+- Update `BepInExUtils.dll` file - ([ffdba66](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/ffdba661421b445d4c8f8981b5ae9b00ba46802f))
+- Update `BepInExUtils.dll` and `BepInExUtils.Generator.dll` files - ([d89e864](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/d89e8645270424d790aefd1df40aa528cebef36a))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([adc363e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/adc363ea41883692bbb834b660ac18341e83766b))
+
+
 ## [0.1.24](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.23..v0.1.24) - 2025-10-11
 
 ### 🐛 Bug Fixes
