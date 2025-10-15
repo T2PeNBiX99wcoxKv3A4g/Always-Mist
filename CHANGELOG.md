@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.28](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.27..v0.1.28) - 2025-10-15
+
+### 🐛 Bug Fixes
+
+- Update `BepInExUtils.dll` and `BepInExUtils.Generator.dll` in `Lib` directory - ([3bbe2f1](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/3bbe2f160bae627c2795366f8faf71b89c1e4140))
+- Update `BepInDependency` version to `0.9.0` and refactor `PostAwake` to `Awake` in `Main.cs` - ([865c73e](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/865c73efa0e43e13e4bb76097b54d1e349d062af))
+- Update `BepInExUtils.dll` and `BepInExUtils.Generator.dll` in `Lib` directory - ([8e7e4d9](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/8e7e4d995c43e1e3b0cae3135540d2ea773a86f8))
+- Update `BepInExUtils.Generator.dll` in `Lib` directory - ([4fa0421](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/4fa0421f8ce153a6c3f5cafada70a41dadc573a1))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([c86d9dd](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/c86d9dd816df5648037c95059cd2cf6e4c6b42ee))
+
+
 ## [0.1.27](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.26..v0.1.27) - 2025-10-15
 
 ### 🐛 Bug Fixes
