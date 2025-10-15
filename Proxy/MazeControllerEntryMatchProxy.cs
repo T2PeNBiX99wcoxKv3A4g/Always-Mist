@@ -7,7 +7,7 @@ namespace AlwaysMist.Proxy;
 /// <summary>
 ///     <see cref="MazeController" />.EntryMatch
 /// </summary>
-[UsedImplicitly]
+[PublicAPI]
 public class MazeControllerEntryMatchProxy : ClassProxy
 {
     private const string ClassName = "MazeController+EntryMatch";
