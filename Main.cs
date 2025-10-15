@@ -6,7 +6,7 @@ using UnityEngine;
 namespace AlwaysMist;
 
 [BepInUtils("io.github.ykysnk.AlwaysMist", "Always Mist", Version)]
-[BepInDependency("io.github.ykysnk.BepinExUtils", "0.8.1")]
+[BepInDependency("io.github.ykysnk.BepinExUtils", "0.9.0")]
 [BepInProcess(Utils.GameName)]
 [ConfigBind<bool>("ResetMazeSaveData", SectionOptions, false,
     "Always reset maze save data when enter even if you're not dead.")]
@@ -24,10 +24,14 @@ public partial class Main
     private const string SectionOptions = "Options";
     private const string Version = "0.1.27";
 
-    protected override void PostAwake()
+    private void Awake()
     {
         var obj = new GameObject(nameof(AlwaysMistController));
         obj.AddComponent<AlwaysMistController>();
         DontDestroyOnLoad(obj);
+    }
+
+    public void Init()
+    {
     }
 }
