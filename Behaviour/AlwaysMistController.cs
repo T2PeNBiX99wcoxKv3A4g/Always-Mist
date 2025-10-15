@@ -104,7 +104,7 @@ public class AlwaysMistController : MonoBehaviour
 
     private void TurnOnRestBench()
     {
-        if (CurrentSceneName != MazeEntranceSceneName || (!Configs.RestBenchInMist && !Configs.TrueAlwaysMist)) return;
+        if (CurrentSceneName != MazeEntranceSceneName || !Configs.RestBenchInMist && !Configs.TrueAlwaysMist) return;
         var restBenches = FindObjectsByType<RestBench>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         Utils.Logger.Debug($"Find RestBenchs: {restBenches}");
@@ -138,7 +138,6 @@ public class AlwaysMistController : MonoBehaviour
         }
     }
 
-    // ReSharper disable once MemberCanBeMadeStatic.Local
     private void ChangeTransitionScene(string doorName, string changeScene = MazeEntranceSceneName,
         string? exitDoorName = null)
     {
@@ -195,14 +194,10 @@ public class AlwaysMistController : MonoBehaviour
             MazeController.ResetSaveData();
     }
 
-    // ReSharper disable MemberCanBePrivate.Global
-    public const string MazeEntranceSceneName = "Dust_Maze_09_entrance";
-    public const string MazeExitSceneName = "Dust_Maze_Last_Hall";
+    internal const string MazeEntranceSceneName = "Dust_Maze_09_entrance";
+    internal const string MazeExitSceneName = "Dust_Maze_Last_Hall";
+    private const string MazeRestSceneName = "Dust_Maze_crossing";
 
-    public const string MazeRestSceneName = "Dust_Maze_crossing";
-    // ReSharper restore MemberCanBePrivate.Global
-
-    // ReSharper disable MemberCanBePrivate.Global
     public string CurrentSceneName { get; private set; } = "";
 
     public string TargetSceneName

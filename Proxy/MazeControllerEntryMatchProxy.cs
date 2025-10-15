@@ -1,5 +1,4 @@
 using BepInExUtils.Proxy;
-using HarmonyLib;
 using JetBrains.Annotations;
 using TeamCherry.SharedUtils;
 
@@ -11,43 +10,43 @@ namespace AlwaysMist.Proxy;
 [UsedImplicitly]
 public class MazeControllerEntryMatchProxy : ClassProxy
 {
+    private const string ClassName = "MazeController+EntryMatch";
+
     /// <summary>
     ///     <see cref="MazeController" />.EntryMatch
     /// </summary>
-    public MazeControllerEntryMatchProxy() : base("MazeController+EntryMatch")
+    public MazeControllerEntryMatchProxy() : base(ClassName)
     {
     }
 
     /// <summary>
     ///     <see cref="MazeController" />.EntryMatch
     /// </summary>
-    public MazeControllerEntryMatchProxy(object obj) : base(obj, "MazeController+EntryMatch")
+    public MazeControllerEntryMatchProxy(object obj) : base(obj, ClassName)
     {
     }
 
     public string EntryScene
     {
-        get => Traverse.Create(Instance).Field<string>(nameof(EntryScene)).Value;
-        set => Traverse.Create(Instance).Field<string>(nameof(EntryScene)).Value = value;
+        get => Native.GetFieldValue<string>(nameof(EntryScene));
+        set => Native.SetFieldValue(nameof(EntryScene), value);
     }
 
     public string EntryDoorDir
     {
-        get => Traverse.Create(Instance).Field<string>(nameof(EntryDoorDir)).Value;
-        set => Traverse.Create(Instance).Field<string>(nameof(EntryDoorDir)).Value = value;
+        get => Native.GetFieldValue<string>(nameof(EntryDoorDir));
+        set => Native.SetFieldValue(nameof(EntryDoorDir), value);
     }
 
     public string ExitDoorDir
     {
-        get => Traverse.Create(Instance).Field<string>(nameof(ExitDoorDir)).Value;
-        set => Traverse.Create(Instance).Field<string>(nameof(ExitDoorDir)).Value = value;
+        get => Native.GetFieldValue<string>(nameof(ExitDoorDir));
+        set => Native.SetFieldValue(nameof(ExitDoorDir), value);
     }
 
     public MinMaxFloat FogRotationRange
     {
-        get => Traverse.Create(Instance).Field<MinMaxFloat>(nameof(FogRotationRange)).Value;
-        set => Traverse.Create(Instance).Field<MinMaxFloat>(nameof(FogRotationRange)).Value = value;
+        get => Native.GetFieldValue<MinMaxFloat>(nameof(FogRotationRange));
+        set => Native.SetFieldValue(nameof(FogRotationRange), value);
     }
-
-    public object GetObject() => Instance;
 }

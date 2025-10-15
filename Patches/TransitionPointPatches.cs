@@ -1,9 +1,7 @@
 using AlwaysMist.Behaviour;
 using HarmonyLib;
 
-// ReSharper disable InconsistentNaming
-
-namespace AlwaysMist.Patch;
+namespace AlwaysMist.Patches;
 
 [HarmonyPatch(typeof(TransitionPoint))]
 internal static class TransitionPointPatches

@@ -7,7 +7,6 @@ public partial class Utils
     internal const string FolderName = "AlwaysMist";
     internal const string GameName = "Hollow Knight Silksong.exe";
 
-    // ReSharper disable once MemberCanBePrivate.Global
     public static string? GetDoorDir(string doorName)
     {
         if (doorName.StartsWith("left"))
@@ -19,7 +18,6 @@ public partial class Utils
         return doorName.StartsWith("bot") ? "bot" : null;
     }
 
-    // ReSharper disable once UnusedMember.Global
     public static string? GetDoorDirMatch(string doorName)
     {
         var dir = GetDoorDir(doorName);

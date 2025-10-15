@@ -2,9 +2,7 @@ using AlwaysMist.Behaviour;
 using AlwaysMist.Datas;
 using HarmonyLib;
 
-// ReSharper disable InconsistentNaming
-
-namespace AlwaysMist.Patch;
+namespace AlwaysMist.Patches;
 
 // Only desktop support
 [HarmonyPatch(typeof(DesktopPlatform))]

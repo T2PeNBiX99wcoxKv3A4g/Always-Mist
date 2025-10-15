@@ -1,11 +1,11 @@
+using System.Diagnostics.CodeAnalysis;
 using Newtonsoft.Json;
-
-// ReSharper disable InconsistentNaming
 
 namespace AlwaysMist.Datas;
 
 [JsonObject]
 [Serializable]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class AlwaysMistData
 {
     public string TargetSceneName = "";

@@ -3,9 +3,7 @@ using AlwaysMist.Proxy;
 using HarmonyLib;
 using Random = UnityEngine.Random;
 
-// ReSharper disable InconsistentNaming
-
-namespace AlwaysMist.Patch;
+namespace AlwaysMist.Patches;
 
 [HarmonyPatch(typeof(MazeController))]
 internal class MazeControllerPatches
@@ -72,9 +70,8 @@ internal class MazeControllerPatches
             }
         };
 
-        var ret = exitMatch.GetObject();
+        var ret = exitMatch.Native;
         Utils.Logger.Debug($"Create Entry Match is {ret}");
-        if (ret == null) return true;
         __result = ret;
         return false;
     }
