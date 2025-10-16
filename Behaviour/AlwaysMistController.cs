@@ -12,15 +12,141 @@ public class AlwaysMistController : MonoBehaviour
     public const string LeftTransitionPoint = "left1";
     public const string RightTransitionPoint = "right1";
 
+    internal const string MazeEntranceSceneName = "Dust_Maze_09_entrance";
+    internal const string MazeExitSceneName = "Dust_Maze_Last_Hall";
+    private const string MazeRestSceneName = "Dust_Maze_crossing";
+
     private static readonly string[] SceneNames =
     [
         "Dust_Maze_01", "Dust_Maze_02", "Dust_Maze_03", "Dust_Maze_04", "Dust_Maze_05", "Dust_Maze_06", "Dust_Maze_07",
         "Dust_Maze_08"
     ];
 
+    public readonly Dictionary<TransitionPoint, string> ChangedTransitionPoint = new();
+
+    public readonly Dictionary<int, AlwaysMistData> SaveDatas = new();
+
     private Scene _currentScene;
 
     public static AlwaysMistController? Instance { get; private set; }
+
+    public string CurrentSceneName { get; private set; } = "";
+
+    public string TargetSceneName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetSceneName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetSceneName = value;
+        }
+    }
+
+    public string TargetEntryDoorDir
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetEntryDoorDir;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetEntryDoorDir = value;
+        }
+    }
+
+    public string TargetExitDoorDir
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetExitDoorDir;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetExitDoorDir = value;
+        }
+    }
+
+    public string TargetExitDoorName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.TargetExitDoorName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.TargetExitDoorName = value;
+        }
+    }
+
+    public string EnterSceneName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.EnterSceneName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.EnterSceneName = value;
+        }
+    }
+
+    public string EnterDoorName
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.EnterDoorName;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.EnterDoorName = value;
+        }
+    }
+
+    public bool IsEnteredMaze
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.IsEnteredMaze;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.IsEnteredMaze = value;
+        }
+    }
+
+    public bool IsOutsideMaze => !IsEnteredMaze && CurrentSceneName != MazeExitSceneName &&
+                                 CurrentSceneName != MazeRestSceneName &&
+                                 !SceneNames.Contains(CurrentSceneName);
+
+    public int LastRandomValue
+    {
+        get
+        {
+            GetSaveData(out var data);
+            return data.LastRandomValue;
+        }
+        set
+        {
+            GetSaveData(out var data);
+            data.LastRandomValue = value;
+        }
+    }
 
     private void Awake()
     {
@@ -193,131 +319,4 @@ public class AlwaysMistController : MonoBehaviour
         if (Configs.ResetMazeSaveData || Configs.TrueAlwaysMist)
             MazeController.ResetSaveData();
     }
-
-    internal const string MazeEntranceSceneName = "Dust_Maze_09_entrance";
-    internal const string MazeExitSceneName = "Dust_Maze_Last_Hall";
-    private const string MazeRestSceneName = "Dust_Maze_crossing";
-
-    public string CurrentSceneName { get; private set; } = "";
-
-    public string TargetSceneName
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.TargetSceneName;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.TargetSceneName = value;
-        }
-    }
-
-    public string TargetEntryDoorDir
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.TargetEntryDoorDir;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.TargetEntryDoorDir = value;
-        }
-    }
-
-    public string TargetExitDoorDir
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.TargetExitDoorDir;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.TargetExitDoorDir = value;
-        }
-    }
-
-    public string TargetExitDoorName
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.TargetExitDoorName;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.TargetExitDoorName = value;
-        }
-    }
-
-    public string EnterSceneName
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.EnterSceneName;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.EnterSceneName = value;
-        }
-    }
-
-    public string EnterDoorName
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.EnterDoorName;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.EnterDoorName = value;
-        }
-    }
-
-    public bool IsEnteredMaze
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.IsEnteredMaze;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.IsEnteredMaze = value;
-        }
-    }
-
-    public bool IsOutsideMaze => !IsEnteredMaze && CurrentSceneName != MazeExitSceneName &&
-                                 CurrentSceneName != MazeRestSceneName &&
-                                 !SceneNames.Contains(CurrentSceneName);
-
-    public int LastRandomValue
-    {
-        get
-        {
-            GetSaveData(out var data);
-            return data.LastRandomValue;
-        }
-        set
-        {
-            GetSaveData(out var data);
-            data.LastRandomValue = value;
-        }
-    }
-
-    public readonly Dictionary<TransitionPoint, string> ChangedTransitionPoint = new();
-
-    public readonly Dictionary<int, AlwaysMistData> SaveDatas = new();
-    // ReSharper restore MemberCanBePrivate.Global
 }
