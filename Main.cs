@@ -6,7 +6,7 @@ using UnityEngine;
 namespace AlwaysMist;
 
 [BepInUtils("io.github.ykysnk.AlwaysMist", "Always Mist", Version)]
-[BepInDependency("io.github.ykysnk.BepinExUtils", "0.9.0")]
+[BepInDependency("io.github.ykysnk.BepinExUtils", "1.0.0")]
 [BepInProcess(Utils.GameName)]
 [ConfigBind<bool>("ResetMazeSaveData", SectionOptions, false,
     "Always reset maze save data when enter even if you're not dead.")]
