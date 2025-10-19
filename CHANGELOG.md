@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.29](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.28..v0.1.29) - 2025-10-19
+
+### 🐛 Bug Fixes
+
+- Update `BepInDependency` version to `1.0.0` in `Main.cs` - ([790cff2](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/790cff2a5e914b8e0aff84ac4fcab0eac1030ef2))
+- Update `BepInExUtils.dll` and `BepInExUtils.Generator.dll` in `Lib` directory - ([d8ea058](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/d8ea058c6c77476883961ef2400875acfb77262e))
+- Remove redundant comment in `AlwaysMistController.cs` - ([a53ce31](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/a53ce311e4126fc992fdb43a7af6db3e4bb527db))
+- Update `BepInExUtils.Generator.dll` in `Lib` directory - ([178fb80](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/178fb80ad30ee899dc7bf36370dde7d94c46c0e8))
+
+### Action
+
+- Update version in `Main.cs` and update `CHANGELOG.md` - ([476d46d](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/commit/476d46db77514ef8dbc6ae4d4b85d3098f84a6f9))
+
+
 ## [0.1.28](https://github.com/T2PeNBiX99wcoxKv3A4g/Always-Mist/compare/v0.1.27..v0.1.28) - 2025-10-15
 
 ### 🐛 Bug Fixes
